@@ -1,7 +1,7 @@
 
 package futsalbookingsystem;
 
-import view.RegistrationView;
+import futsalbookingsystem.view.RegistrationView;
 
 
 public class FutsalBookingSystem {

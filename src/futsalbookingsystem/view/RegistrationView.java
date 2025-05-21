@@ -1,9 +1,7 @@
-package view;
+package futsalbookingsystem.view;
 
 
 import java.awt.Color;
-import javax.swing.JFrame;
-import view.SignIn;
 
 public class RegistrationView extends javax.swing.JFrame {
 

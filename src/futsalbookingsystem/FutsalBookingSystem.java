@@ -4,17 +4,17 @@
  */
 package futsalbookingsystem;
 
-/**
- *
- * @author lenovo
- */
+import view.RegistrationView;
+
+
 public class FutsalBookingSystem {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         // TODO code application logic here
+        RegistrationView RegistrationViewFrame = new RegistrationView(); 
+        RegistrationViewFrame.setVisible(true);
+        RegistrationViewFrame.pack();
+        RegistrationViewFrame.setLocationRelativeTo(null);
     }
     
 }

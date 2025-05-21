@@ -149,7 +149,7 @@ public class RegistrationView extends javax.swing.JFrame {
 
         jLabel1.setForeground(new java.awt.Color(217, 217, 217));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Backgroung-Registration.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1070, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1040, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

@@ -30,6 +30,7 @@ public class RegistrationView extends javax.swing.JFrame {
         jPasswordField1 = new javax.swing.JPasswordField();
         jPasswordField2 = new javax.swing.JPasswordField();
         jLabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         jTextField1.setText("jTextField1");
 
@@ -47,7 +48,7 @@ public class RegistrationView extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Registration");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 70, 310, 70));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 70, 310, 70));
 
         jButton3.setBackground(new java.awt.Color(217, 217, 217));
         jButton3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
@@ -58,7 +59,7 @@ public class RegistrationView extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 490, 200, 40));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 490, 200, 40));
 
         jTextField4.setBackground(new java.awt.Color(217, 217, 217));
         jTextField4.setText("   Enter your full name");
@@ -76,7 +77,7 @@ public class RegistrationView extends javax.swing.JFrame {
                 jTextField4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 180, 300, 40));
+        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 180, 300, 40));
 
         jTextField7.setBackground(new java.awt.Color(217, 217, 217));
         jTextField7.setText("   Phone Number");
@@ -94,7 +95,7 @@ public class RegistrationView extends javax.swing.JFrame {
                 jTextField7ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 240, 300, 40));
+        getContentPane().add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 240, 300, 40));
 
         jTextField8.setBackground(new java.awt.Color(217, 217, 217));
         jTextField8.setText("   Enter your email");
@@ -112,7 +113,7 @@ public class RegistrationView extends javax.swing.JFrame {
                 jTextField8ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 300, 300, 40));
+        getContentPane().add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 300, 300, 40));
 
         jPasswordField1.setBackground(new java.awt.Color(217, 217, 217));
         jPasswordField1.setText("   Enter your password");
@@ -130,7 +131,7 @@ public class RegistrationView extends javax.swing.JFrame {
                 jPasswordField1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 360, 300, 40));
+        getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 360, 300, 40));
 
         jPasswordField2.setBackground(new java.awt.Color(217, 217, 217));
         jPasswordField2.setText("   Confirm password");
@@ -143,11 +144,14 @@ public class RegistrationView extends javax.swing.JFrame {
                 jPasswordField2FocusLost(evt);
             }
         });
-        getContentPane().add(jPasswordField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 420, 300, 40));
+        getContentPane().add(jPasswordField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 420, 300, 40));
 
         jLabel1.setForeground(new java.awt.Color(217, 217, 217));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Backgroung-Registration.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1040, -1));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/futsalbookingsystem/imagepicker/Screenshot 2025-05-22 144917.png"))); // NOI18N
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -277,6 +281,7 @@ public class RegistrationView extends javax.swing.JFrame {
     private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JPasswordField jPasswordField2;

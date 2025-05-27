@@ -29,8 +29,8 @@ public class RegistrationView extends javax.swing.JFrame {
         jTextField8 = new javax.swing.JTextField();
         jPasswordField1 = new javax.swing.JPasswordField();
         jPasswordField2 = new javax.swing.JPasswordField();
-        jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         jTextField1.setText("jTextField1");
 
@@ -146,12 +146,12 @@ public class RegistrationView extends javax.swing.JFrame {
         });
         getContentPane().add(jPasswordField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 420, 300, 40));
 
-        jLabel1.setForeground(new java.awt.Color(217, 217, 217));
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Backgroung-Registration.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1040, -1));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Registration-Icon.png"))); // NOI18N
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, -1, -1));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/futsalbookingsystem/imagepicker/Screenshot 2025-05-22 144917.png"))); // NOI18N
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jLabel1.setForeground(new java.awt.Color(217, 217, 217));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Background.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1040, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

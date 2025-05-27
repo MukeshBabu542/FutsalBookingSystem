@@ -158,11 +158,6 @@ public class RegistrationView extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        SignIn SignInFrame = new SignIn(); 
-        SignInFrame.setVisible(true);
-        SignInFrame.pack();
-        SignInFrame.setLocationRelativeTo(null);
-        this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed

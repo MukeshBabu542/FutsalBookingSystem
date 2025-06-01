@@ -18,14 +18,16 @@ import java.sql.SQLException;
  */
 public class UserDao {
     MySqlConnection mysql = new MySqlConnection();
-    public boolean register(UserData user){
-      String query= "INSERT INTO users(fname,email,fpassword)VALUES(?,?,?)";
+    public boolean registeration(UserData user){
+      String query= "INSERT INTO users(fname,email,phonenumber,fpassword)VALUES(?,?,?)";
       Connection conn = (Connection) mysql.openConnection();
       try{
           PreparedStatement stmnt = conn.prepareStatement(query);
           stmnt.setString(1,user.getName());
           stmnt.setString(2,user.getEmail());
-          stmnt.setString(3,user.getPassword());
+          stmnt.setString(3,user.getPhonenumber());
+          stmnt.setString(4,user.getPassword());
+          
           int result = stmnt.executeUpdate();
           return result>0;
       } catch(SQLException e){

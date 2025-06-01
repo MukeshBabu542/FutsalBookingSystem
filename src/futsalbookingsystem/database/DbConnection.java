@@ -4,10 +4,13 @@
  */
 package futsalbookingsystem.database;
 
+import java.sql.Connection;
+
 /**
  *
  * @author lenovo
  */
-public class DbConnection {
-    
+public interface DbConnection {
+    Connection openConnection();
+    void closeConnection(Connection conn);
 }

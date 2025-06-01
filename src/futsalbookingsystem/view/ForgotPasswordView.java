@@ -161,7 +161,7 @@ public class ForgotPasswordView extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        SignIn SignInFrame = new SignIn(); 
+        LoginView SignInFrame = new LoginView(); 
         SignInFrame.setVisible(true);
         SignInFrame.pack();
         SignInFrame.setLocationRelativeTo(null);

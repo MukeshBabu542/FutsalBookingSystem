@@ -6,6 +6,7 @@ package futsalbookingsystem.controller;
 
 import futsalbookingsystem.dao.UserDao;
 import futsalbookingsystem.model.UserData;
+import futsalbookingsystem.view.LoginView;
 import futsalbookingsystem.view.RegistrationView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

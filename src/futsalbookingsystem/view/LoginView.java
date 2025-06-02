@@ -5,6 +5,8 @@
 package futsalbookingsystem.view;
 
 import java.awt.Color;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseListener;
 
 /**
  *
@@ -287,4 +289,20 @@ public class LoginView extends javax.swing.JFrame {
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
+
+    public javax.swing.JTextField getEmailTextField(){
+        return jTextField1;
+        
+    }
+    public javax.swing.JPasswordField getPasswordField(){
+        return jPasswordField1;
+        
+    }
+    public void loginUser(ActionListener listener){
+        jButton1.addActionListener(listener);
+    }
+    public void forgetPassword(MouseListener listener){
+        jLabel4.addMouseListener(listener);
+        
+    }
 }

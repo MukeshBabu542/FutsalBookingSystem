@@ -16,15 +16,18 @@ public class UserData {
       private String password;
       private String name;
       private String id;
-      public UserData(String name, String email, String password){
+      private String phonenumber;
+      public UserData(String name, String email,String phonenumber, String password){
           this.name= name;
           this.email= email;
+          this.phonenumber=phonenumber;
           this.password= password;
       }    
-      public UserData(String id,String name, String email, String password){
+      public UserData(String id,String name, String email,String phonenumber,  String password){
           this.id=id;
           this.name=name;
           this.email=email;
+          this.phonenumber=phonenumber;
           this.password=password;
       }    
     // setters
@@ -55,5 +58,7 @@ public class UserData {
       public String getPassword(){
           return this.password;
       }
+      public String getPhonenumber(){
+          return this.phonenumber;
+      }
   }
-

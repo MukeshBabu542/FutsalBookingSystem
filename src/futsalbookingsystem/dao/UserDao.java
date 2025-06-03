@@ -81,6 +81,10 @@ public class UserDao {
             mysql.closeConnection(conn);
         }
     }
+
+    public boolean registration(UserData user) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
     
 //    public boolean resetPassword(ResetPasswordRequest resetReq){

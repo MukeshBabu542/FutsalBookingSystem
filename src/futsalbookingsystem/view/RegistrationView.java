@@ -1,6 +1,7 @@
 package futsalbookingsystem.view;
 
 
+import futsalbookingsystem.controller.RegistrationController;
 import java.awt.Color;
 
 public class RegistrationView extends javax.swing.JFrame {
@@ -291,4 +292,8 @@ public class RegistrationView extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     // End of variables declaration//GEN-END:variables
+
+    public void registerUser(RegistrationController.RegisterUser registerUser) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

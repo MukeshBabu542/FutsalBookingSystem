@@ -22,8 +22,6 @@ public class LoginController {
         this.view = view;
         LoginUser loginUser = new LoginUser();
         this.view.loginUser(loginUser);
-        ResetPassword resetPass = new ResetPassword();
-        this.view.forgetPassword(resetPass);
         
         
     }
@@ -57,4 +55,5 @@ public class LoginController {
             }
         }
     }
+    
 }

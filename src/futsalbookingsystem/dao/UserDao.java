@@ -18,9 +18,22 @@ import java.sql.SQLException;
  */
 public class UserDao {
     MySqlConnection mysql = new MySqlConnection();
-    public boolean registeration(UserData user){
-      String query= "INSERT INTO users(fname,email,phonenumber,fpassword)VALUES(?,?,?)";
+    public boolean registration(UserData user){
       Connection conn = (Connection) mysql.openConnection();
+         String createTableSQL = "CREATE TABLE IF NOT EXISTS users ("
+            + "id INT AUTO_INCREMENT PRIMARY KEY, "               
+            + "fname VARCHAR(50) NOT NULL, "
+            + "email VARCHAR(100) UNIQUE NOT NULL, "
+            + "phonenumber VARCHAR(255) NOT NULL, "
+            + "fpassword VARCHAR(255) NOT NULL"
+            + ")";
+           try {
+            PreparedStatement createtbl= conn.prepareStatement(createTableSQL);
+            createtbl.executeUpdate();
+        } catch (SQLException ex) {
+            java.util.logging.Logger.getLogger(UserDao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+      String query= "INSERT INTO users(fname,email,phonenumber,fpassword)VALUES(?,?,?,?)";
       try{
           PreparedStatement stmnt = conn.prepareStatement(query);
           stmnt.setString(1,user.getName());
@@ -38,6 +51,7 @@ public class UserDao {
           
       }
     }
+    
     public UserData login(LoginRequest loginData){
       String query= "SELECT * FROM users WHERE email=?,fpassword=?";
       Connection conn= mysql.openConnection();
@@ -81,10 +95,6 @@ public class UserDao {
             mysql.closeConnection(conn);
         }
     }
-
-    public boolean registration(UserData user) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 }
     
 //    public boolean resetPassword(ResetPasswordRequest resetReq){
@@ -110,4 +120,3 @@ public class UserDao {
 //        }
 //    }
 //  }
-

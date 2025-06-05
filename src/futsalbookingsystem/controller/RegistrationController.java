@@ -6,6 +6,8 @@ package futsalbookingsystem.controller;
 
 import futsalbookingsystem.dao.UserDao;
 import futsalbookingsystem.model.UserData;
+import futsalbookingsystem.view.LoginView;
+import futsalbookingsystem.view.RegistrationView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
@@ -35,27 +37,30 @@ public class RegistrationController {
 
         @Override
         public void actionPerformed(ActionEvent e) {
+            //assign required values to variables
+                        
            String name= registrationView.getNameTextField().getText();
-           String email= registrationView.getEmailTextField().getText();
+           String email= registrationview.getEmailTextField().getText();
            String password= String.valueOf(registrationView.getPasswordField().getPassword());
            String confirmPassword = String.valueOf(registrationView.getConfirmPasswordField().getPassword());
            if (name.isEmpty()||email.isEmpty()||password.isEmpty()||confirmPassword.isEmpty()){
-               JOptionPane.showMessageDialog(registView,"Fill in all the fields");
+               JOptionPane.showMessageDialog(registrationView,"Fill in all the fields");
            } else if (!password.equals(confirmPassword)){
                JOptionPane.showMessageDialog(registrationView,"Passwords do not match");
                
            }else {
                UserData user = new UserData(name,email,password);
                UserDao userDao = new UserDao();
-               boolean result = userDao.registrarion(user);
+               boolean result = userDao.registerUser(user);
                if (result){
                    JOptionPane.showMessageDialog(registrationView, "Registered Successfully");
                    LoginView loginView = new LoginView();
                    LoginController loginController = new LoginController(loginView);
                    loginController.open();
+                   close();
                    
                }else{
-                   JOptionPane.showMessageDialog(registerView,"Failed to Register");
+                   JOptionPane.showMessageDialog(registrationView,"Failed to Register");
                }
            }
            

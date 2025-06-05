@@ -145,6 +145,11 @@ public class RegistrationView extends javax.swing.JFrame {
                 jPasswordField2FocusLost(evt);
             }
         });
+        jPasswordField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPasswordField2ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jPasswordField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 420, 300, 40));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Registration-Icon.png"))); // NOI18N
@@ -269,6 +274,10 @@ public class RegistrationView extends javax.swing.JFrame {
             jPasswordField2.setForeground(Color.BLACK);
         }
     }//GEN-LAST:event_jPasswordField2FocusLost
+
+    private void jPasswordField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPasswordField2ActionPerformed
 
     /**
      * @param args the command line arguments

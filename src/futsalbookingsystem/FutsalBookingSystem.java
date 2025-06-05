@@ -1,16 +1,20 @@
 
 package futsalbookingsystem;
 
+import futsalbookingsystem.controller.RegistrationController;
 import futsalbookingsystem.view.RegistrationView;
 
 
 public class FutsalBookingSystem {
 
-    public static void main(String[] args) {
-        RegistrationView RegistrationViewFrame = new RegistrationView(); 
-        RegistrationViewFrame.setVisible(true);
-        RegistrationViewFrame.pack();
-        RegistrationViewFrame.setLocationRelativeTo(null);
-    }
-    
+public static void main(String[] args) {
+    RegistrationView registrationViewFrame = new RegistrationView(); 
+    RegistrationController controller = new RegistrationController(registrationViewFrame);
+    controller.open();
 }
+
+}
+
+       
+    
+

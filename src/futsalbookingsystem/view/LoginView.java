@@ -117,16 +117,28 @@ public class LoginView extends javax.swing.JFrame {
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/futsalbookingsystem/imagepicker/Screenshot_2025-05-28_135044-removebg-preview.png"))); // NOI18N
         jLabel3.setText("jLabel3");
+<<<<<<< HEAD
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, 320, 480, 270));
+=======
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-60, 260, 480, 270));
+>>>>>>> 35fa5daa1c1eb8f4a5642d3a33fd515aa3c5c516
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Sign In");
+<<<<<<< HEAD
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 50, -1, -1));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/futsalbookingsystem/imagepicker/Screenshot_2025-05-28_135705-removebg-preview.png"))); // NOI18N
         jLabel4.setText("jLabel4");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, -10, 520, 430));
+=======
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 20, -1, -1));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/futsalbookingsystem/imagepicker/Screenshot_2025-05-28_135705-removebg-preview.png"))); // NOI18N
+        jLabel4.setText("jLabel4");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, -50, 520, 430));
+>>>>>>> 35fa5daa1c1eb8f4a5642d3a33fd515aa3c5c516
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/futsalbookingsystem/imagepicker/Background.png"))); // NOI18N
         jLabel1.setText("jLabel1");

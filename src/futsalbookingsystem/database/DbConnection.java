@@ -4,13 +4,21 @@
  */
 package futsalbookingsystem.database;
 
+<<<<<<< HEAD
 import java.sql.Connection;
 
+=======
+>>>>>>> aca86a1e719fb8486a5c35f332a6b3d2a1331172
 /**
  *
  * @author lenovo
  */
+<<<<<<< HEAD
 public interface DbConnection {
     Connection openConnection();
     void closeConnection(Connection conn);
+=======
+public class DbConnection {
+    
+>>>>>>> aca86a1e719fb8486a5c35f332a6b3d2a1331172
 }

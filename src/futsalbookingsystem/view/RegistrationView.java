@@ -2,9 +2,7 @@ package futsalbookingsystem.view;
 
 
 import java.awt.Color;
-
 import java.awt.event.ActionListener;
-
 
 public class RegistrationView extends javax.swing.JFrame {
 
@@ -53,101 +51,106 @@ public class RegistrationView extends javax.swing.JFrame {
         jLabel2.setText("Registration");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 70, 310, 70));
 
-        jButton3.setBackground(new java.awt.Color(217, 217, 217));
-        jButton3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jButton3.setText("Sign in");
-        jButton3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        signinButton.setBackground(new java.awt.Color(217, 217, 217));
+        signinButton.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        signinButton.setText("Sign in");
+        signinButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        signinButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                signinButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 490, 200, 40));
+        getContentPane().add(signinButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 490, 200, 40));
 
-        jTextField4.setBackground(new java.awt.Color(217, 217, 217));
-        jTextField4.setText("   Enter your full name");
-        jTextField4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jTextField4.addFocusListener(new java.awt.event.FocusAdapter() {
+        nameTextField.setBackground(new java.awt.Color(217, 217, 217));
+        nameTextField.setText("   Enter your full name");
+        nameTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        nameTextField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                jTextField4FocusGained(evt);
+                nameTextFieldFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                jTextField4FocusLost(evt);
+                nameTextFieldFocusLost(evt);
             }
         });
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        nameTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                nameTextFieldActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 180, 300, 40));
+        getContentPane().add(nameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 180, 300, 40));
 
-        jTextField7.setBackground(new java.awt.Color(217, 217, 217));
-        jTextField7.setText("   Phone Number");
-        jTextField7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jTextField7.addFocusListener(new java.awt.event.FocusAdapter() {
+        phoneTextField.setBackground(new java.awt.Color(217, 217, 217));
+        phoneTextField.setText("   Phone Number");
+        phoneTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        phoneTextField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                jTextField7FocusGained(evt);
+                phoneTextFieldFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                jTextField7FocusLost(evt);
+                phoneTextFieldFocusLost(evt);
             }
         });
-        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+        phoneTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
+                phoneTextFieldActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 240, 300, 40));
+        getContentPane().add(phoneTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 240, 300, 40));
 
-        jTextField8.setBackground(new java.awt.Color(217, 217, 217));
-        jTextField8.setText("   Enter your email");
-        jTextField8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jTextField8.addFocusListener(new java.awt.event.FocusAdapter() {
+        emailTextField.setBackground(new java.awt.Color(217, 217, 217));
+        emailTextField.setText("   Enter your email");
+        emailTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        emailTextField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                jTextField8FocusGained(evt);
+                emailTextFieldFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                jTextField8FocusLost(evt);
+                emailTextFieldFocusLost(evt);
             }
         });
-        jTextField8.addActionListener(new java.awt.event.ActionListener() {
+        emailTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField8ActionPerformed(evt);
+                emailTextFieldActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 300, 300, 40));
+        getContentPane().add(emailTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 300, 300, 40));
 
-        jPasswordField1.setBackground(new java.awt.Color(217, 217, 217));
-        jPasswordField1.setText("   Enter your password");
-        jPasswordField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jPasswordField1.addFocusListener(new java.awt.event.FocusAdapter() {
+        passwordField.setBackground(new java.awt.Color(217, 217, 217));
+        passwordField.setText("   Enter your password");
+        passwordField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        passwordField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                jPasswordField1FocusGained(evt);
+                passwordFieldFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                jPasswordField1FocusLost(evt);
+                passwordFieldFocusLost(evt);
             }
         });
-        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+        passwordField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField1ActionPerformed(evt);
+                passwordFieldActionPerformed(evt);
             }
         });
-        getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 360, 300, 40));
+        getContentPane().add(passwordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 360, 300, 40));
 
-        jPasswordField2.setBackground(new java.awt.Color(217, 217, 217));
-        jPasswordField2.setText("   Confirm password");
-        jPasswordField2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
-        jPasswordField2.addFocusListener(new java.awt.event.FocusAdapter() {
+        confirmpasswordField.setBackground(new java.awt.Color(217, 217, 217));
+        confirmpasswordField.setText("   Confirm password");
+        confirmpasswordField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+        confirmpasswordField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                jPasswordField2FocusGained(evt);
+                confirmpasswordFieldFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                jPasswordField2FocusLost(evt);
+                confirmpasswordFieldFocusLost(evt);
             }
         });
-        getContentPane().add(jPasswordField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 420, 300, 40));
+        confirmpasswordField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                confirmpasswordFieldActionPerformed(evt);
+            }
+        });
+        getContentPane().add(confirmpasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 420, 300, 40));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Registration-Icon.png"))); // NOI18N
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, -1, -1));

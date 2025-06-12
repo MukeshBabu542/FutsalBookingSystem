@@ -5,19 +5,17 @@
 package futsalbookingsystem.view;
 
 import java.awt.Color;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseListener;
 
 /**
  *
  * @author ASUS
  */
-public class LoginView extends javax.swing.JFrame {
+public class SignIn extends javax.swing.JFrame {
 
     /**
      * Creates new form SignIn
      */
-    public LoginView() {
+    public SignIn() {
         initComponents();
     }
 
@@ -117,28 +115,16 @@ public class LoginView extends javax.swing.JFrame {
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/futsalbookingsystem/imagepicker/Screenshot_2025-05-28_135044-removebg-preview.png"))); // NOI18N
         jLabel3.setText("jLabel3");
-
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, 320, 480, 270));
-
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-60, 260, 480, 270));
-
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Sign In");
-
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 50, -1, -1));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/futsalbookingsystem/imagepicker/Screenshot_2025-05-28_135705-removebg-preview.png"))); // NOI18N
         jLabel4.setText("jLabel4");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, -10, 520, 430));
-
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 20, -1, -1));
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/futsalbookingsystem/imagepicker/Screenshot_2025-05-28_135705-removebg-preview.png"))); // NOI18N
-        jLabel4.setText("jLabel4");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, -50, 520, 430));
-
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/futsalbookingsystem/imagepicker/Background.png"))); // NOI18N
         jLabel1.setText("jLabel1");
@@ -178,7 +164,11 @@ public class LoginView extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-      
+        ForgotPasswordView ForgotPasswordViewFrame = new ForgotPasswordView(); 
+        ForgotPasswordViewFrame.setVisible(true);
+        ForgotPasswordViewFrame.pack();
+        ForgotPasswordViewFrame.setLocationRelativeTo(null);
+        this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jPasswordField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jPasswordField1FocusGained
@@ -232,38 +222,14 @@ public class LoginView extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(LoginView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SignIn.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(LoginView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SignIn.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(LoginView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SignIn.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(LoginView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SignIn.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -276,7 +242,7 @@ public class LoginView extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new LoginView().setVisible(true);
+                new SignIn().setVisible(true);
             }
         });
     }
@@ -297,20 +263,4 @@ public class LoginView extends javax.swing.JFrame {
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
-
-    public javax.swing.JTextField getEmailTextField(){
-        return jTextField1;
-        
-    }
-    public javax.swing.JPasswordField getPasswordField(){
-        return jPasswordField1;
-        
-    }
-    public void loginUser(ActionListener listener){
-        jButton1.addActionListener(listener);
-    }
-    public void forgetPassword(MouseListener listener){
-        jLabel4.addMouseListener(listener);
-        
-    }
 }

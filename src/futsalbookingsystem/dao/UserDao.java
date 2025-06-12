@@ -25,7 +25,7 @@ public class UserDao {
             + "fname VARCHAR(50) NOT NULL, "
             + "email VARCHAR(100) UNIQUE NOT NULL, "
             + "phonenumber VARCHAR(255) NOT NULL, "
-            + "fpassword String NOT NULL"
+            + "password String NOT NULL"
             + ")";
            try {
             PreparedStatement createtbl= conn.prepareStatement(createTableSQL);
@@ -33,7 +33,7 @@ public class UserDao {
         } catch (SQLException ex) {
             java.util.logging.Logger.getLogger(UserDao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-      String query= "INSERT INTO users(fname,email,phonenumber,fpassword)VALUES(?,?,?,?)";
+      String query= "INSERT INTO users(fname,email,phonenumber,password)VALUES(?,?,?,?)";
       try{
           PreparedStatement stmnt = conn.prepareStatement(query);
           stmnt.setString(1,user.getName());

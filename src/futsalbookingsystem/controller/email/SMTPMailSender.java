@@ -4,15 +4,13 @@
  */
 package futsalbookingsystem.controller.email;
 
-import java.net.Authenticator;
-import java.net.PasswordAuthentication;
 import java.util.*;
 
 import javax.mail.*;
 
 import javax.mail.internet.*;
 
-
+import javax.activation.*;
 
 public class SMTPMailSender {
 
@@ -23,7 +21,6 @@ public class SMTPMailSender {
     private static final String email = "ENTER YOUR EMAIL";
 
     private static String password = "ENTER YOUR APP PASSWORD";
-    private static Object Session;
 
 
 
@@ -96,4 +93,6 @@ public class SMTPMailSender {
     }
 
 }
+
+
 

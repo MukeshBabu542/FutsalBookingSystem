@@ -7,6 +7,7 @@ package futsalbookingsystem.controller;
 import futsalbookingsystem.dao.UserDao;
 import futsalbookingsystem.model.LoginRequest;
 import futsalbookingsystem.model.UserData;
+import futsalbookingsystem.view.DashboardView;
 import futsalbookingsystem.view.LoginView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -46,11 +47,11 @@ public class LoginController {
                if(user==null){
                    JOptionPane.showMessageDialog(view,"Login failed");
                    
-//               }else{
-//                   DashboardView dashboardView = new DashboardView();
-//                   DashboardController dashboardController = new DashboardController(dashboardView,user);
-//                   dashboardController.open();
-//                   close();
+               }else{
+                   DashboardView dashboardView = new DashboardView();
+                   DashboardController dashboardController = new DashboardController(dashboardView,user);
+                   dashboardController.open();
+                   close();
                }
             }
         }

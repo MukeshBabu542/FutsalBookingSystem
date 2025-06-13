@@ -48,7 +48,7 @@ public class RegistrationController {
                JOptionPane.showMessageDialog(registrationView,"Passwords do not match");
                
            }else {
-               UserData user = new UserData(name,email,phonenumber,password);
+               UserData user = new UserData(name.strip(),email.strip(),phonenumber.strip(),password.strip());
                UserDao userDao = new UserDao();
                boolean result = userDao.registration(user);
                if (result){

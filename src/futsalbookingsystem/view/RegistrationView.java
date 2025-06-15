@@ -73,6 +73,11 @@ public class RegistrationView extends javax.swing.JFrame {
                 nameTextFieldFocusLost(evt);
             }
         });
+        nameTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nameTextFieldActionPerformed(evt);
+            }
+        });
         getContentPane().add(nameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 180, 300, 40));
 
         phoneTextField.setBackground(new java.awt.Color(217, 217, 217));
@@ -84,6 +89,11 @@ public class RegistrationView extends javax.swing.JFrame {
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
                 phoneTextFieldFocusLost(evt);
+            }
+        });
+        phoneTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                phoneTextFieldActionPerformed(evt);
             }
         });
         getContentPane().add(phoneTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 240, 300, 40));
@@ -99,23 +109,54 @@ public class RegistrationView extends javax.swing.JFrame {
                 emailTextFieldFocusLost(evt);
             }
         });
+        emailTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                emailTextFieldActionPerformed(evt);
+            }
+        });
         getContentPane().add(emailTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 300, 300, 40));
 
         passwordField.setBackground(new java.awt.Color(217, 217, 217));
         passwordField.setText("   Enter your password");
         passwordField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        passwordField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                passwordFieldFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                passwordFieldFocusLost(evt);
+            }
+        });
+        passwordField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passwordFieldActionPerformed(evt);
+            }
+        });
         getContentPane().add(passwordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 360, 300, 40));
 
         confirmpasswordField.setBackground(new java.awt.Color(217, 217, 217));
-        confirmpasswordField.setText("   Confirm password");
+        confirmpasswordField.setText("   Confirm Password");
         confirmpasswordField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+        confirmpasswordField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                confirmpasswordFieldFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                confirmpasswordFieldFocusLost(evt);
+            }
+        });
+        confirmpasswordField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                confirmpasswordFieldActionPerformed(evt);
+            }
+        });
         getContentPane().add(confirmpasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 420, 300, 40));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Registration-Icon.png"))); // NOI18N
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, -1, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/futsalbookingsystem/imagepicker/Background.png"))); // NOI18N
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, -1));
 
         pack();
         setLocationRelativeTo(null);

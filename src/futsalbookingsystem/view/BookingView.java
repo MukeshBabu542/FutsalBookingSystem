@@ -26,7 +26,6 @@ public class BookingView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jCalendar1 = new com.toedter.calendar.JCalendar();
         jSpinner2 = new javax.swing.JSpinner();
         jPanel7 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
@@ -36,11 +35,11 @@ public class BookingView extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
-        jCalendar2 = new com.toedter.calendar.JCalendar();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jSpinner1 = new javax.swing.JSpinner();
         jLabel5 = new javax.swing.JLabel();
+        jCalendar3 = new com.toedter.calendar.JCalendar();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -137,10 +136,9 @@ public class BookingView extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 570));
-        getContentPane().add(jCalendar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 60, 380, 240));
 
         jLabel2.setText("Select Date/Day");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 30, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 40, -1, -1));
 
         jLabel4.setText("Select the no of players");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 30, 130, -1));
@@ -148,6 +146,7 @@ public class BookingView extends javax.swing.JFrame {
 
         jLabel5.setText("Select Time");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 140, -1, -1));
+        getContentPane().add(jCalendar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 380, 250));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/futsalbookingsystem/imagepicker/Background.png"))); // NOI18N
@@ -234,8 +233,7 @@ public class BookingView extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private com.toedter.calendar.JCalendar jCalendar1;
-    private com.toedter.calendar.JCalendar jCalendar2;
+    private com.toedter.calendar.JCalendar jCalendar3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

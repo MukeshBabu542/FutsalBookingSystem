@@ -20,6 +20,7 @@ public class UserDao {
     MySqlConnection mysql = new MySqlConnection();
     public boolean registration(UserData user){
       Connection conn = (Connection) mysql.openConnection();
+//      if(conn== null)return false;
          String createTableSQL = "CREATE TABLE IF NOT EXISTS users ("
             + "id INT AUTO_INCREMENT PRIMARY KEY, "               
             + "fname VARCHAR(50) NOT NULL, "
@@ -53,7 +54,7 @@ public class UserDao {
     }
     
     public UserData login(LoginRequest loginData){
-      String query= "SELECT * FROM users WHERE email=?,fpassword=?";
+      String query= "SELECT * FROM users WHERE email=? and fpassword=?";
       Connection conn= mysql.openConnection();
       try{
           PreparedStatement stmnt= conn.prepareStatement(query);
@@ -65,7 +66,8 @@ public class UserDao {
               String id = result.getString("id");
               String email= result.getString("email");
               String fpassword = result.getString("fpassword");
-              UserData user = new UserData(id,fname,email,fpassword);
+              String phonenumber = result.getString("phonenumber");
+              UserData user = new UserData(id,fname,email,phonenumber,fpassword);
               return user;
           }else{
               return null;
@@ -78,7 +80,7 @@ public class UserDao {
     }
     
     public boolean checkEmail(String email){
-        String query="SELECT * FROM users where eamil=?";
+        String query="SELECT * FROM users where email=?";
         Connection conn = mysql.openConnection();
         try{
             PreparedStatement stmnt = conn.prepareStatement(query);

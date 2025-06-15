@@ -1,9 +1,7 @@
 
 package futsalbookingsystem;
 
-
 import futsalbookingsystem.controller.RegistrationController;
-
 import futsalbookingsystem.view.RegistrationView;
 
 
@@ -18,3 +16,5 @@ public static void main(String[] args) {
 }
 
        
+    
+

@@ -164,11 +164,7 @@ public class SignIn extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        ForgotPasswordView ForgotPasswordViewFrame = new ForgotPasswordView(); 
-        ForgotPasswordViewFrame.setVisible(true);
-        ForgotPasswordViewFrame.pack();
-        ForgotPasswordViewFrame.setLocationRelativeTo(null);
-        this.dispose();
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jPasswordField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jPasswordField1FocusGained

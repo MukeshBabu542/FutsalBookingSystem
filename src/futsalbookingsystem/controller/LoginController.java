@@ -4,6 +4,11 @@
  */
 package futsalbookingsystem.controller;
 
+import futsalbookingsystem.dao.UserDao;
+import futsalbookingsystem.model.LoginRequest;
+import futsalbookingsystem.model.UserData;
+import futsalbookingsystem.view.DashboardView;
+import futsalbookingsystem.view.LoginView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -51,18 +56,18 @@ public class LoginController {
             if (email.isEmpty()||password.isEmpty()){
                 JOptionPane.showMessageDialog(view, "Fill in all the fields");
             } else {
-                LoginRequest loginReq = new LoginRequest(email,password);
-                UserDao userDao = new UserDao();
-                UserData user = userDao.login(loginReq);
-                if(user==null){
-                    JOptionPane.showMessageDialog(view,"Login failed");
-//                } else{
-//                    DashboardTabbedView dashboardView = new DashboardTabbedView();
-//                    DashboardTabbedController dashboardController = 
-//                            new DashboardTabbedController(dashboardView,user);
-//                    dashboardController.open();
-//                    close();
-//                }
+               LoginRequest loginReq = new LoginRequest(email,password);
+               UserDao userDao = new UserDao();
+               UserData user = userDao.login(loginReq);
+               if(user==null){
+                   JOptionPane.showMessageDialog(view,"Login failed");
+                   
+               }else{
+                   DashboardView dashboardView = new DashboardView();
+                   DashboardController dashboardController = new DashboardController(dashboardView,user);
+                   dashboardController.open();
+                   close();
+               }
             }
         }
         
@@ -157,7 +162,7 @@ public class LoginController {
     }
     
 }
-}
+
 
 
 //import futsalbookingsystem.dao.UserDao;

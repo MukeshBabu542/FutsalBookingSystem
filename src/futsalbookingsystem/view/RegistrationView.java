@@ -73,11 +73,6 @@ public class RegistrationView extends javax.swing.JFrame {
                 nameTextFieldFocusLost(evt);
             }
         });
-        nameTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nameTextFieldActionPerformed(evt);
-            }
-        });
         getContentPane().add(nameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 180, 300, 40));
 
         phoneTextField.setBackground(new java.awt.Color(217, 217, 217));
@@ -89,11 +84,6 @@ public class RegistrationView extends javax.swing.JFrame {
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
                 phoneTextFieldFocusLost(evt);
-            }
-        });
-        phoneTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                phoneTextFieldActionPerformed(evt);
             }
         });
         getContentPane().add(phoneTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 240, 300, 40));
@@ -109,47 +99,16 @@ public class RegistrationView extends javax.swing.JFrame {
                 emailTextFieldFocusLost(evt);
             }
         });
-        emailTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                emailTextFieldActionPerformed(evt);
-            }
-        });
         getContentPane().add(emailTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 300, 300, 40));
 
         passwordField.setBackground(new java.awt.Color(217, 217, 217));
         passwordField.setText("   Enter your password");
         passwordField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        passwordField.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                passwordFieldFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                passwordFieldFocusLost(evt);
-            }
-        });
-        passwordField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passwordFieldActionPerformed(evt);
-            }
-        });
         getContentPane().add(passwordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 360, 300, 40));
 
         confirmpasswordField.setBackground(new java.awt.Color(217, 217, 217));
         confirmpasswordField.setText("   Confirm password");
         confirmpasswordField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
-        confirmpasswordField.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                confirmpasswordFieldFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                confirmpasswordFieldFocusLost(evt);
-            }
-        });
-        confirmpasswordField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                confirmpasswordFieldActionPerformed(evt);
-            }
-        });
         getContentPane().add(confirmpasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 420, 300, 40));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Registration-Icon.png"))); // NOI18N
@@ -159,28 +118,13 @@ public class RegistrationView extends javax.swing.JFrame {
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void signinButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signinButtonActionPerformed
         // TODO add your handling code here:
     
     }//GEN-LAST:event_signinButtonActionPerformed
-
-    private void nameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nameTextFieldActionPerformed
-
-    private void phoneTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_phoneTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_phoneTextFieldActionPerformed
-
-    private void emailTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_emailTextFieldActionPerformed
-
-    private void passwordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_passwordFieldActionPerformed
 
     private void nameTextFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nameTextFieldFocusGained
         // TODO add your handling code here:
@@ -235,24 +179,6 @@ public class RegistrationView extends javax.swing.JFrame {
             emailTextField.setForeground(Color.BLACK);
         }
     }//GEN-LAST:event_emailTextFieldFocusLost
-
-    private void passwordFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passwordFieldFocusGained
-        // TODO add your handling code here:
-        if (passwordField.getText().equals("   Enter your password")) {
-            passwordField.setText(""); // Restore echoing (• is typical)
-            passwordField.setForeground(Color.BLACK);
-        }
-    }//GEN-LAST:event_passwordFieldFocusGained
-
-    private void passwordFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passwordFieldFocusLost
-        // TODO add your handling code here:
-        if (passwordField.getPassword().length == 0) {
-            passwordField.setText("   Enter your password");
-            passwordField.setEchoChar((char) 0); // Disable masking again
-            passwordField.setForeground(Color.BLACK);
-        }
-
-    }//GEN-LAST:event_passwordFieldFocusLost
 
     private void confirmpasswordFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_confirmpasswordFieldFocusGained
         // TODO add your handling code here:

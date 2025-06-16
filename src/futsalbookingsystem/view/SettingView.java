@@ -4,6 +4,8 @@
  */
 package futsalbookingsystem.view;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author HP
@@ -28,18 +30,17 @@ public class SettingView extends javax.swing.JFrame {
 
         jPanel7 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
+        DashboardBtn = new javax.swing.JButton();
+        EventBtn = new javax.swing.JButton();
+        BookingBtn = new javax.swing.JButton();
+        HostoryBtn = new javax.swing.JButton();
+        SettingBtn = new javax.swing.JButton();
+        UpdateInfoBtn = new javax.swing.JButton();
+        ViewprofileBtn = new javax.swing.JButton();
+        ChangePasswordBtn = new javax.swing.JButton();
+        DeleteAccountBtn = new javax.swing.JButton();
+        RatingBtn = new javax.swing.JButton();
+        LogoutBtn = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -53,49 +54,45 @@ public class SettingView extends javax.swing.JFrame {
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Nutgmegz");
 
-        jButton1.setBackground(new java.awt.Color(217, 217, 217));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        jButton1.setText("Dashboard");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        DashboardBtn.setBackground(new java.awt.Color(217, 217, 217));
+        DashboardBtn.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        DashboardBtn.setText("Dashboard");
+        DashboardBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                DashboardBtnActionPerformed(evt);
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(217, 217, 217));
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        jButton2.setText("Event");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        EventBtn.setBackground(new java.awt.Color(217, 217, 217));
+        EventBtn.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        EventBtn.setText("Event");
+        EventBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                EventBtnActionPerformed(evt);
             }
         });
 
-        jButton5.setBackground(new java.awt.Color(217, 217, 217));
-        jButton5.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        jButton5.setText("Booking");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        BookingBtn.setBackground(new java.awt.Color(217, 217, 217));
+        BookingBtn.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        BookingBtn.setText("Booking");
+        BookingBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                BookingBtnActionPerformed(evt);
             }
         });
 
-        jButton4.setBackground(new java.awt.Color(217, 217, 217));
-        jButton4.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        jButton4.setText("History");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        HostoryBtn.setBackground(new java.awt.Color(217, 217, 217));
+        HostoryBtn.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        HostoryBtn.setText("History");
+        HostoryBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                HostoryBtnActionPerformed(evt);
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(217, 217, 217));
-        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        jButton3.setText("Setting-");
-
-        jButton6.setBackground(new java.awt.Color(217, 217, 217));
-        jButton6.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        jButton6.setText("Logout");
+        SettingBtn.setBackground(new java.awt.Color(217, 217, 217));
+        SettingBtn.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        SettingBtn.setText("Setting-");
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -109,101 +106,98 @@ public class SettingView extends javax.swing.JFrame {
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGap(24, 24, 24)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(15, Short.MAX_VALUE))
+                            .addComponent(EventBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(DashboardBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BookingBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(HostoryBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(SettingBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 226, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 249, Short.MAX_VALUE)
+                .addComponent(DashboardBtn)
                 .addGap(18, 18, 18)
-                .addComponent(jButton2)
+                .addComponent(EventBtn)
                 .addGap(18, 18, 18)
-                .addComponent(jButton5)
+                .addComponent(BookingBtn)
                 .addGap(18, 18, 18)
-                .addComponent(jButton4)
+                .addComponent(HostoryBtn)
                 .addGap(18, 18, 18)
-                .addComponent(jButton3)
-                .addGap(18, 18, 18)
-                .addComponent(jButton6)
-                .addGap(16, 16, 16))
+                .addComponent(SettingBtn)
+                .addGap(60, 60, 60))
         );
 
         getContentPane().add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 570));
 
-        jButton7.setBackground(new java.awt.Color(217, 217, 217));
-        jButton7.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jButton7.setText("Update Information");
-        jButton7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        UpdateInfoBtn.setBackground(new java.awt.Color(217, 217, 217));
+        UpdateInfoBtn.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        UpdateInfoBtn.setText("Update Information");
+        UpdateInfoBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        UpdateInfoBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                UpdateInfoBtnActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 130, 330, 120));
+        getContentPane().add(UpdateInfoBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 130, 330, 120));
 
-        jButton9.setBackground(new java.awt.Color(217, 217, 217));
-        jButton9.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jButton9.setText("View Profile");
-        jButton9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
+        ViewprofileBtn.setBackground(new java.awt.Color(217, 217, 217));
+        ViewprofileBtn.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        ViewprofileBtn.setText("View Profile");
+        ViewprofileBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        ViewprofileBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
+                ViewprofileBtnActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 130, 330, 120));
+        getContentPane().add(ViewprofileBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 130, 330, 120));
 
-        jButton8.setBackground(new java.awt.Color(217, 217, 217));
-        jButton8.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jButton8.setText("Change Password");
-        jButton8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        ChangePasswordBtn.setBackground(new java.awt.Color(217, 217, 217));
+        ChangePasswordBtn.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        ChangePasswordBtn.setText("Change Password");
+        ChangePasswordBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        ChangePasswordBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                ChangePasswordBtnActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 280, 330, 120));
+        getContentPane().add(ChangePasswordBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 280, 330, 120));
 
-        jButton11.setBackground(new java.awt.Color(217, 217, 217));
-        jButton11.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jButton11.setText("Delete Account");
-        jButton11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jButton11.addActionListener(new java.awt.event.ActionListener() {
+        DeleteAccountBtn.setBackground(new java.awt.Color(217, 217, 217));
+        DeleteAccountBtn.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        DeleteAccountBtn.setText("Delete Account");
+        DeleteAccountBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        DeleteAccountBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton11ActionPerformed(evt);
+                DeleteAccountBtnActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 430, 330, 120));
+        getContentPane().add(DeleteAccountBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 430, 330, 120));
 
-        jButton10.setBackground(new java.awt.Color(217, 217, 217));
-        jButton10.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jButton10.setText("Rating");
-        jButton10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
+        RatingBtn.setBackground(new java.awt.Color(217, 217, 217));
+        RatingBtn.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        RatingBtn.setText("Rating");
+        RatingBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        RatingBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
+                RatingBtnActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 280, 330, 120));
+        getContentPane().add(RatingBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 280, 330, 120));
 
-        jButton12.setBackground(new java.awt.Color(217, 217, 217));
-        jButton12.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jButton12.setText("Logout");
-        jButton12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jButton12.addActionListener(new java.awt.event.ActionListener() {
+        LogoutBtn.setBackground(new java.awt.Color(217, 217, 217));
+        LogoutBtn.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        LogoutBtn.setText("Logout");
+        LogoutBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        LogoutBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton12ActionPerformed(evt);
+                LogoutBtnActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 430, 330, 120));
+        getContentPane().add(LogoutBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 430, 330, 120));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 55)); // NOI18N
         jLabel2.setText("Setting");
@@ -216,84 +210,95 @@ public class SettingView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void DashboardBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DashboardBtnActionPerformed
         // TODO add your handling code here:
         DashboardView dashboardView = new DashboardView();
         dashboardView.show();
         
         dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_DashboardBtnActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void EventBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EventBtnActionPerformed
         // TODO add your handling code here:
         EventView eventView = new EventView();
         eventView.show();
         
         dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_EventBtnActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void BookingBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BookingBtnActionPerformed
         // TODO add your handling code here:
         BookingView bookingView = new BookingView();
         bookingView.show();
         
         dispose();
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_BookingBtnActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void HostoryBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HostoryBtnActionPerformed
         // TODO add your handling code here:
         HistoryView historyView  = new HistoryView();
         historyView.show();
         
         dispose();
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_HostoryBtnActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+    private void ChangePasswordBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChangePasswordBtnActionPerformed
         // TODO add your handling code here:
         ChangeKnownPasswordView changeknowpasswordView  = new ChangeKnownPasswordView();
         changeknowpasswordView.show();
         
         dispose();
-    }//GEN-LAST:event_jButton8ActionPerformed
+    }//GEN-LAST:event_ChangePasswordBtnActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void UpdateInfoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateInfoBtnActionPerformed
         // TODO add your handling code here:
         UpdateAccountView updateaccountView  = new UpdateAccountView();
         updateaccountView.show();
         
         dispose();
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }//GEN-LAST:event_UpdateInfoBtnActionPerformed
 
-    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+    private void DeleteAccountBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteAccountBtnActionPerformed
         // TODO add your handling code here:
         AccDeletion accdeletionView  = new AccDeletion();
         accdeletionView.show();
         
         dispose();
-    }//GEN-LAST:event_jButton11ActionPerformed
+    }//GEN-LAST:event_DeleteAccountBtnActionPerformed
 
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+    private void ViewprofileBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewprofileBtnActionPerformed
         // TODO add your handling code here:
         ViewProfileView viewprofileView = new ViewProfileView();
         viewprofileView.show();
         
         dispose();
-    }//GEN-LAST:event_jButton9ActionPerformed
+    }//GEN-LAST:event_ViewprofileBtnActionPerformed
 
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+    private void RatingBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RatingBtnActionPerformed
         // TODO add your handling code here:
         RatingView ratingView = new RatingView();
         ratingView.show();
         
         dispose();
-    }//GEN-LAST:event_jButton10ActionPerformed
+    }//GEN-LAST:event_RatingBtnActionPerformed
 
-    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+    private void LogoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutBtnActionPerformed
         // TODO add your handling code here:
-        LoginView loginView = new LoginView();
-        loginView.show();
-        dispose();
-    }//GEN-LAST:event_jButton12ActionPerformed
+//        LoginView loginView = new LoginView();
+//        loginView.show();
+//        dispose();
+          int response = JOptionPane.showConfirmDialog(null,
+            "Are you sure you want to logout?",
+            "Logout Confirmation",
+            JOptionPane.YES_NO_OPTION,
+            JOptionPane.QUESTION_MESSAGE);
+
+        if (response == JOptionPane.YES_OPTION) {
+            dispose(); // Close current window
+            new LoginView().setVisible(true); // Open login form
+        }
+
+    }//GEN-LAST:event_LogoutBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -331,18 +336,17 @@ public class SettingView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
+    private javax.swing.JButton BookingBtn;
+    private javax.swing.JButton ChangePasswordBtn;
+    private javax.swing.JButton DashboardBtn;
+    private javax.swing.JButton DeleteAccountBtn;
+    private javax.swing.JButton EventBtn;
+    private javax.swing.JButton HostoryBtn;
+    private javax.swing.JButton LogoutBtn;
+    private javax.swing.JButton RatingBtn;
+    private javax.swing.JButton SettingBtn;
+    private javax.swing.JButton UpdateInfoBtn;
+    private javax.swing.JButton ViewprofileBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

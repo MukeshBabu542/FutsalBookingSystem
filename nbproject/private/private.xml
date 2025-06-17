@@ -18,6 +18,7 @@
             <file>file:/C:/Users/cis-c/OneDrive/Desktop/Futsal%20Booking%20System/FutsalBookingSystem/src/futsalbookingsystem/controller/RegistrationController.java</file>
             <file>file:/C:/Users/cis-c/OneDrive/Desktop/Futsal%20Booking%20System/FutsalBookingSystem/src/futsalbookingsystem/view/ChangeKnownPasswordView.java</file>
             <file>file:/C:/Users/cis-c/OneDrive/Desktop/Futsal%20Booking%20System/FutsalBookingSystem/src/futsalbookingsystem/controller/email/SMTPMailSender.java</file>
+            <file>file:/C:/Users/cis-c/OneDrive/Desktop/Futsal%20Booking%20System/FutsalBookingSystem/src/futsalbookingsystem/dao/UserDao.java</file>
         </group>
     </open-files>
 </project-private>

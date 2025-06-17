@@ -19,6 +19,11 @@
             <file>file:/C:/Users/ASUS/OneDrive/Desktop/FutsalBookingSystem/src/futsalbookingsystem/view/ChangeKnownPasswordView.java</file>
             <file>file:/C:/Users/ASUS/OneDrive/Desktop/FutsalBookingSystem/src/futsalbookingsystem/view/DashboardView.java</file>
             <file>file:/C:/Users/ASUS/OneDrive/Desktop/FutsalBookingSystem/src/futsalbookingsystem/imagepicker/download__1_-removebg-preview.png</file>
+<<<<<<< HEAD
+=======
+            <file>file:/C:/Users/ASUS/OneDrive/Desktop/FutsalBookingSystem/src/futsalbookingsystem/controller/ChangeKnownPasswordView.java</file>
+            <file>file:/C:/Users/ASUS/OneDrive/Desktop/FutsalBookingSystem/src/futsalbookingsystem/model/ChangePassword.java</file>
+>>>>>>> samarth
         </group>
     </open-files>
 </project-private>

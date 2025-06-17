@@ -34,10 +34,10 @@ public class LoginView extends javax.swing.JFrame {
         buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        LoginBtn = new javax.swing.JButton();
+        ForgotPasswordBtn = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        passwordBtn = new javax.swing.JPasswordField();
         jLabel3 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -79,21 +79,26 @@ public class LoginView extends javax.swing.JFrame {
         });
         jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 250, 310, 40));
 
-        jButton1.setBackground(new java.awt.Color(204, 204, 204));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jButton1.setText("Login");
-        jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 400, 130, 50));
-
-        jButton2.setBackground(new java.awt.Color(204, 204, 204));
-        jButton2.setText("Forgot Password?");
-        jButton2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        LoginBtn.setBackground(new java.awt.Color(204, 204, 204));
+        LoginBtn.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        LoginBtn.setText("Login");
+        LoginBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        LoginBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                LoginBtnActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 460, 150, -1));
+        jPanel1.add(LoginBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 400, 130, 50));
+
+        ForgotPasswordBtn.setBackground(new java.awt.Color(204, 204, 204));
+        ForgotPasswordBtn.setText("Forgot Password?");
+        ForgotPasswordBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        ForgotPasswordBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ForgotPasswordBtnActionPerformed(evt);
+            }
+        });
+        jPanel1.add(ForgotPasswordBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 460, 150, -1));
 
         jButton3.setBackground(new java.awt.Color(204, 204, 204));
         jButton3.setText("Don't have an account? Sign up.");
@@ -105,20 +110,20 @@ public class LoginView extends javax.swing.JFrame {
         });
         jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 490, 210, -1));
 
-        jPasswordField1.setBackground(new java.awt.Color(204, 204, 204));
-        jPasswordField1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jPasswordField1.setText("password");
-        jPasswordField1.setToolTipText("");
-        jPasswordField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jPasswordField1.addFocusListener(new java.awt.event.FocusAdapter() {
+        passwordBtn.setBackground(new java.awt.Color(204, 204, 204));
+        passwordBtn.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        passwordBtn.setText("password");
+        passwordBtn.setToolTipText("");
+        passwordBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        passwordBtn.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                jPasswordField1FocusGained(evt);
+                passwordBtnFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                jPasswordField1FocusLost(evt);
+                passwordBtnFocusLost(evt);
             }
         });
-        jPanel1.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 330, 310, 40));
+        jPanel1.add(passwordBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 330, 310, 40));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/futsalbookingsystem/imagepicker/Screenshot_2025-05-28_135044-removebg-preview.png"))); // NOI18N
         jLabel3.setText("jLabel3");
@@ -164,32 +169,35 @@ public class LoginView extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        RegistrationView registrationView = new RegistrationView();
-        registrationView.show();
+        
+        LoginView loginview =new LoginView();
+        loginview.show();
+//        RegistrationView registrationView = new RegistrationView();
+//        registrationView.show();
         
         dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void ForgotPasswordBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ForgotPasswordBtnActionPerformed
         // TODO add your handling code here:
       
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_ForgotPasswordBtnActionPerformed
 
-    private void jPasswordField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jPasswordField1FocusGained
+    private void passwordBtnFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passwordBtnFocusGained
         // TODO add your handling code here:
-        if (jPasswordField1.getText().equals("password")) {
-            jPasswordField1.setText(""); // Restore echoing (• is typical)
-            jPasswordField1.setForeground(Color.black);
+        if (passwordBtn.getText().equals("password")) {
+            passwordBtn.setText(""); // Restore echoing (• is typical)
+            passwordBtn.setForeground(Color.black);
         }
-    }//GEN-LAST:event_jPasswordField1FocusGained
+    }//GEN-LAST:event_passwordBtnFocusGained
 
-    private void jPasswordField1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jPasswordField1FocusLost
+    private void passwordBtnFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passwordBtnFocusLost
         // TODO add your handling code here:
-        if (jPasswordField1.getText().equals("")) {
-            jPasswordField1.setText("password"); // Restore echoing (• is typical)
-            jPasswordField1.setForeground(Color.black);
+        if (passwordBtn.getText().equals("")) {
+            passwordBtn.setText("password"); // Restore echoing (• is typical)
+            passwordBtn.setForeground(Color.black);
         }
-    }//GEN-LAST:event_jPasswordField1FocusLost
+    }//GEN-LAST:event_passwordBtnFocusLost
 
         private void jTextField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusGained
         // TODO add your handling code here:
@@ -212,6 +220,10 @@ public class LoginView extends javax.swing.JFrame {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void LoginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_LoginBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -312,9 +324,9 @@ public class LoginView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ForgotPasswordBtn;
+    private javax.swing.JButton LoginBtn;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
@@ -324,8 +336,8 @@ public class LoginView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JPasswordField passwordBtn;
     // End of variables declaration//GEN-END:variables
 
     public javax.swing.JTextField getEmailTextField(){
@@ -333,11 +345,11 @@ public class LoginView extends javax.swing.JFrame {
         
     }
     public javax.swing.JPasswordField getPasswordField(){
-        return jPasswordField1;
+        return passwordBtn;
         
     }
     public void loginUser(ActionListener listener){
-        jButton1.addActionListener(listener);
+        LoginBtn.addActionListener(listener);
     }
     public void forgetPassword(MouseListener listener){
         jLabel4.addMouseListener(listener);

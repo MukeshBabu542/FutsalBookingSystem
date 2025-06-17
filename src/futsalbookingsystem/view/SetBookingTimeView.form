@@ -575,20 +575,20 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="720" y="10" width="-1" height="-1"/>
+              <AbsoluteConstraints x="730" y="70" width="-1" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel29">
+        <Component class="javax.swing.JLabel" name="jLabel30">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/images/download__3_-removebg-preview.png"/>
+              <Image iconType="3" name="/futsalbookingsystem/imagepicker/download__1_-removebg-preview.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="jLabel29"/>
+            <Property name="text" type="java.lang.String" value="jLabel30"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="550" y="50" width="370" height="530"/>
+              <AbsoluteConstraints x="570" y="220" width="360" height="260"/>
             </Constraint>
           </Constraints>
         </Component>

@@ -11,11 +11,13 @@
             <file>file:/C:/Users/cis-c/OneDrive/Desktop/Futsal%20Booking%20System/FutsalBookingSystem/src/futsalbookingsystem/view/EventView.java</file>
             <file>file:/C:/Users/cis-c/OneDrive/Desktop/Futsal%20Booking%20System/FutsalBookingSystem/src/futsalbookingsystem/view/BookingView.java</file>
             <file>file:/C:/Users/cis-c/OneDrive/Desktop/Futsal%20Booking%20System/FutsalBookingSystem/src/futsalbookingsystem/view/AccDeletion.java</file>
-            <file>file:/C:/Users/cis-c/OneDrive/Desktop/Futsal%20Booking%20System/FutsalBookingSystem/src/futsalbookingsystem/view/ChangeKnownPasswordView.java</file>
-            <file>file:/C:/Users/cis-c/OneDrive/Desktop/Futsal%20Booking%20System/FutsalBookingSystem/src/futsalbookingsystem/view/UpdateAccountView.java</file>
-            <file>file:/C:/Users/cis-c/OneDrive/Desktop/Futsal%20Booking%20System/FutsalBookingSystem/src/futsalbookingsystem/view/ViewProfileView.java</file>
-            <file>file:/C:/Users/cis-c/OneDrive/Desktop/Futsal%20Booking%20System/FutsalBookingSystem/src/futsalbookingsystem/view/RatingView.java</file>
             <file>file:/C:/Users/cis-c/OneDrive/Desktop/Futsal%20Booking%20System/FutsalBookingSystem/src/futsalbookingsystem/view/RegistrationView.java</file>
+            <file>file:/C:/Users/cis-c/OneDrive/Desktop/Futsal%20Booking%20System/FutsalBookingSystem/src/futsalbookingsystem/FutsalBookingSystem.java</file>
+            <file>file:/C:/Users/cis-c/OneDrive/Desktop/Futsal%20Booking%20System/FutsalBookingSystem/src/futsalbookingsystem/controller/DashboardController.java</file>
+            <file>file:/C:/Users/cis-c/OneDrive/Desktop/Futsal%20Booking%20System/FutsalBookingSystem/src/futsalbookingsystem/controller/LoginController.java</file>
+            <file>file:/C:/Users/cis-c/OneDrive/Desktop/Futsal%20Booking%20System/FutsalBookingSystem/src/futsalbookingsystem/controller/RegistrationController.java</file>
+            <file>file:/C:/Users/cis-c/OneDrive/Desktop/Futsal%20Booking%20System/FutsalBookingSystem/src/futsalbookingsystem/view/ChangeKnownPasswordView.java</file>
+            <file>file:/C:/Users/cis-c/OneDrive/Desktop/Futsal%20Booking%20System/FutsalBookingSystem/src/futsalbookingsystem/controller/email/SMTPMailSender.java</file>
         </group>
     </open-files>
 </project-private>

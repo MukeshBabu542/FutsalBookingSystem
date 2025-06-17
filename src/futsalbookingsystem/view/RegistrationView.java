@@ -4,6 +4,7 @@ package futsalbookingsystem.view;
 import java.awt.Color;
 import java.awt.event.ActionListener;
 
+
 public class RegistrationView extends javax.swing.JFrame {
 
     public RegistrationView() {
@@ -97,6 +98,11 @@ public class RegistrationView extends javax.swing.JFrame {
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
                 emailTextFieldFocusLost(evt);
+            }
+        });
+        emailTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                emailTextFieldActionPerformed(evt);
             }
         });
         getContentPane().add(emailTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 280, 300, 40));
@@ -257,6 +263,10 @@ public class RegistrationView extends javax.swing.JFrame {
     private void confirmpasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmpasswordFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_confirmpasswordFieldActionPerformed
+
+    private void emailTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailTextFieldActionPerformed
+   
+    }//GEN-LAST:event_emailTextFieldActionPerformed
 
     /**
      * @param args the command line arguments

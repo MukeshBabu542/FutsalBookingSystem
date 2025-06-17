@@ -58,7 +58,7 @@ public class LoginController {
             } else {
                LoginRequest loginReq = new LoginRequest(email,password);
                UserDao userDao = new UserDao();
-               UserData user = userDao.login(loginReq);
+               UserData user = userDao.Login(loginReq);
                if(user==null){
                    JOptionPane.showMessageDialog(view,"Login failed");
                    

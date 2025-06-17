@@ -1,6 +1,35 @@
 package futsalbookingsystem.model;
 
 public class UserData {
+<<<<<<< HEAD
+    
+    // private attributes
+    // public methods
+      private String email;
+      private String password;
+      private String name;
+      private String id;
+      private String phonenumber;
+      public UserData(String name, String email, String phonenumber, String password){
+          this.name= name;
+          this.email= email;
+          this.phonenumber=phonenumber;
+          this.password= password;
+      }    
+      public UserData(String id,String name, String email,String phonenumber,  String password){
+          this.id=id;
+          this.name=name;
+          this.email=email;
+          this.phonenumber=phonenumber;
+          this.password=password;
+      }    
+    // setters
+      public void setId(String id){
+          this.id=id;
+      }
+      public void setName(String name){
+          this.name=name;
+=======
 
     private String email;
     private String password;
@@ -64,6 +93,20 @@ public class UserData {
     public String getPhonenumber() {
         return this.phonenumber;
     }
+<<<<<<< HEAD
+=======
+
+    // ✅ Change Password Method
+    public boolean changePassword(String oldPassword, String newPassword) {
+        if (this.password.equals(oldPassword)) {
+            this.password = newPassword;
+            return true;
+        } else {
+            return false;
+>>>>>>> a05915404c0fba712277757924de6c2f40af654a
+        }
+    }
+>>>>>>> 4f276687ad30d4a70dabd1a39ac5487838c1a866
 }
 
     

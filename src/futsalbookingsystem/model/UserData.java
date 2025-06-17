@@ -64,14 +64,6 @@ public class UserData {
     public String getPhonenumber() {
         return this.phonenumber;
     }
-
-    // ✅ Change Password Method
-    public boolean changePassword(String oldPassword, String newPassword) {
-        if (this.password.equals(oldPassword)) {
-            this.password = newPassword;
-            return true;
-        } else {
-            return false;
-        }
-    }
 }
+
+    

@@ -1,12 +1,3 @@
-# Build and distribution
- build
- dist
-
- # NetBeans user-specific files
- nbproject/private/
- # Compiled class files
- *.class
-
- # OS-specific
- .DS_Store
-Thumbs.db
+/build/
+/nbproject/private/
+/dist/

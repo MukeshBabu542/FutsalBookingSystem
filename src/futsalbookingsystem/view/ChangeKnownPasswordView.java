@@ -135,7 +135,7 @@ public class ChangeKnownPasswordView extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(217, 217, 217));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jButton1.setText("Change");
+        jButton1.setText("Button");
         jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 470, 170, 40));

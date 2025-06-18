@@ -4,7 +4,6 @@ package futsalbookingsystem.view;
 import java.awt.Color;
 import java.awt.event.ActionListener;
 
-
 public class RegistrationView extends javax.swing.JFrame {
 
     public RegistrationView() {

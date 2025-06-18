@@ -79,7 +79,7 @@ public class UserDao {
           mysql.closeConnection(conn);
       }
     }
-//    
+    
     public boolean checkEmail(String email){
         String query="SELECT * FROM users where email=?";
         Connection conn = mysql.openConnection();
@@ -133,7 +133,6 @@ public class UserDao {
             mysql.closeConnection(conn);
         }
     }
-
 
 
     public boolean deleteAccount(String email, String password) {

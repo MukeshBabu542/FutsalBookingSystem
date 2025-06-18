@@ -12,12 +12,23 @@ package futsalbookingsystem.view;
  * @author HP
  */
 public class DashboardView extends javax.swing.JFrame {
-
     /**
      * Creates new form DashboardView
      */
-    public DashboardView() {
+    private String userEmail;
+    public DashboardView(String email) {
+        this.userEmail=email;
         initComponents();
+    }
+
+    private void setupListeners() {
+    jButton3.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            SettingView settingsView = new SettingView(userEmail);
+            settingsView.setVisible(true);
+            DashboardView.this.dispose();
+        }
+    });
     }
 
     /**
@@ -262,32 +273,32 @@ public class DashboardView extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        EventView eventView= new EventView();
-        eventView.show();
+        EventView eventView= new EventView(userEmail);
+        eventView.setVisible(true);
         
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-        BookingView bookingView= new BookingView();
-        bookingView.show();
+        BookingView bookingView= new BookingView(userEmail);
+        bookingView.setVisible(true);
         
         dispose();
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-        HistoryView historyView = new HistoryView();
-        historyView.show();
+        HistoryView historyView = new HistoryView(userEmail);
+        historyView.setVisible(true);
         
         dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        SettingView settingView = new SettingView();
-        settingView.show();
+        SettingView settingView = new SettingView(userEmail);
+        settingView.setVisible(true);
         
         dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -301,6 +312,10 @@ public class DashboardView extends javax.swing.JFrame {
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
+        String userEmail = "user@example.com";
+        DashboardView dashboard = new DashboardView(userEmail);
+        dashboard.setVisible(true);
+        
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -322,7 +337,7 @@ public class DashboardView extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new DashboardView().setVisible(true);
+                new DashboardView("user@example.com").setVisible(true);
             }
         });
     }

@@ -1,3 +1,4 @@
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -26,7 +27,7 @@ public class UserDao {
             + "fname VARCHAR(50) NOT NULL, "
             + "email VARCHAR(100) UNIQUE NOT NULL, "
             + "phonenumber VARCHAR(255) NOT NULL, "
-            + "password String NOT NULL"
+            + "fpassword VARCHAR(255) NOT NULL"
             + ")";
            try {
             PreparedStatement createtbl= conn.prepareStatement(createTableSQL);
@@ -34,7 +35,7 @@ public class UserDao {
         } catch (SQLException ex) {
             java.util.logging.Logger.getLogger(UserDao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-      String query= "INSERT INTO users(fname,email,phonenumber,password)VALUES(?,?,?,?)";
+      String query= "INSERT INTO users(fname,email,phonenumber,fpassword)VALUES(?,?,?,?)";
       try{
           PreparedStatement stmnt = conn.prepareStatement(query);
           stmnt.setString(1,user.getName());
@@ -97,12 +98,64 @@ public class UserDao {
             mysql.closeConnection(conn);
         }
     }
-
-    public UserData Login(LoginRequest loginReq) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+    public boolean changePassword(String oldPassword, String newPassword) {
+        String query = "UPDATE users SET fpassword=? WHERE fpassword=?";
+        Connection conn = mysql.openConnection();
+        try {
+            PreparedStatement stmnt = conn.prepareStatement(query);
+            stmnt.setString(1, newPassword);
+            stmnt.setString(2, oldPassword);
+            int result = stmnt.executeUpdate();
+            return result > 0;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        } finally {
+            mysql.closeConnection(conn);
+        }
 }
-    
+    public boolean updateAccount(String email, String currentPassword, String newUsername, String newPhone, String newEmail) {
+        String query = "UPDATE users SET fname=?, phonenumber=?, email=? WHERE email=? AND fpassword=?";
+        Connection conn = mysql.openConnection();
+        try {
+            PreparedStatement stmnt = conn.prepareStatement(query);
+            stmnt.setString(1, newUsername);
+            stmnt.setString(2, newPhone);
+            stmnt.setString(3, newEmail);
+            stmnt.setString(4, email);
+            stmnt.setString(5, currentPassword);
+            int result = stmnt.executeUpdate();
+            return result > 0;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        } finally {
+            mysql.closeConnection(conn);
+        }
+    }
+
+
+
+    public boolean deleteAccount(String email, String password) {
+        String query = "DELETE FROM users WHERE email=? AND fpassword=?";
+        Connection conn = mysql.openConnection();
+        try {
+            PreparedStatement stmnt = conn.prepareStatement(query);
+            stmnt.setString(1, email);
+            stmnt.setString(2, password);
+            int result = stmnt.executeUpdate();
+            return result > 0;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        } finally {
+            mysql.closeConnection(conn);
+        }
+    }
+
+
+
+}
 //    public boolean resetPassword(ResetPasswordRequest resetReq){
 //        // Step1: write a query in a string
 //        String query = "UPDATE users SET fpassword=? WHERE email=?";

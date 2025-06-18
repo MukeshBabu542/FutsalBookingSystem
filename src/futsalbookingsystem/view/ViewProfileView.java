@@ -11,11 +11,12 @@ import java.awt.Color;
  * @author HP
  */
 public class ViewProfileView extends javax.swing.JFrame {
-
+    private String userEmail;
     /**
      * Creates new form ViewProfileView
      */
-    public ViewProfileView() {
+    public ViewProfileView(String userEmail) {
+        this.userEmail = userEmail;
         initComponents();
     }
 
@@ -177,9 +178,8 @@ public class ViewProfileView extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-        SettingView settingView = new SettingView();
-        settingView.show();
-
+        SettingView settingView = new SettingView(userEmail);
+        settingView.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -213,7 +213,7 @@ public class ViewProfileView extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ViewProfileView().setVisible(true);
+                new ViewProfileView("user@example.com").setVisible(true);
             }
         });
     }

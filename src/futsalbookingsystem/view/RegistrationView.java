@@ -37,6 +37,7 @@ public class RegistrationView extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
 
         jTextField1.setText("jTextField1");
@@ -161,6 +162,14 @@ public class RegistrationView extends javax.swing.JFrame {
         jLabel8.setText("Enter your email");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 256, -1, 20));
 
+        jButton3.setText("jButton3");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 490, -1, -1));
+
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/futsalbookingsystem/imagepicker/Background.png"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -264,9 +273,13 @@ public class RegistrationView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_confirmpasswordFieldActionPerformed
 
-    private void emailTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailTextFieldActionPerformed
-   
-    }//GEN-LAST:event_emailTextFieldActionPerformed
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        LoginView loginView = new LoginView();
+        loginView.show();
+        
+        dispose();
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -277,6 +290,7 @@ public class RegistrationView extends javax.swing.JFrame {
     private javax.swing.JTextField emailTextField;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

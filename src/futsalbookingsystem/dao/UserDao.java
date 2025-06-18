@@ -54,31 +54,31 @@ public class UserDao {
       }
     }
     
-//    public UserData login(LoginRequest loginData){
-//      String query= "SELECT * FROM users WHERE email=? and fpassword=?";
-//      Connection conn= mysql.openConnection();
-//      try{
-//          PreparedStatement stmnt= conn.prepareStatement(query);
-//          stmnt.setString(1,loginData.getEmail());
-//          stmnt.setString(2,loginData.getPassword());
-//          ResultSet result= stmnt.executeQuery();
-//          if (result.next()){
-//              String fname = result.getString("fname");
-//              String id = result.getString("id");
-//              String email= result.getString("email");
-//              String fpassword = result.getString("fpassword");
-//              String phonenumber = result.getString("phonenumber");
-//              UserData user = new UserData(id,fname,email,phonenumber,fpassword);
-//              return user;
-//          }else{
-//              return null;
-//          }
-//    } catch(SQLException e){
-//        return null;
-//    } finally{
-//          mysql.closeConnection(conn);
-//      }
-//    }
+    public UserData login(LoginRequest loginData){
+      String query= "SELECT * FROM users WHERE email=? and fpassword=?";
+      Connection conn= mysql.openConnection();
+      try{
+          PreparedStatement stmnt= conn.prepareStatement(query);
+          stmnt.setString(1,loginData.getEmail());
+          stmnt.setString(2,loginData.getPassword());
+          ResultSet result= stmnt.executeQuery();
+          if (result.next()){
+              String fname = result.getString("fname");
+              String id = result.getString("id");
+              String email= result.getString("email");
+              String fpassword = result.getString("fpassword");
+              String phonenumber = result.getString("phonenumber");
+              UserData user = new UserData(id,fname,email,phonenumber,fpassword);
+              return user;
+          }else{
+              return null;
+          }
+    } catch(SQLException e){
+        return null;
+    } finally{
+          mysql.closeConnection(conn);
+      }
+    }
 //    
     public boolean checkEmail(String email){
         String query="SELECT * FROM users where email=?";

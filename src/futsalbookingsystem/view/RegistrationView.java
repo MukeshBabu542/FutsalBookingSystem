@@ -101,11 +101,6 @@ public class RegistrationView extends javax.swing.JFrame {
                 emailTextFieldFocusLost(evt);
             }
         });
-        emailTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                emailTextFieldActionPerformed(evt);
-            }
-        });
         getContentPane().add(emailTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 280, 300, 40));
 
         passwordField.setBackground(new java.awt.Color(217, 217, 217));

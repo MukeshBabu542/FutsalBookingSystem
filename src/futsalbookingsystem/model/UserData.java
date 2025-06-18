@@ -1,7 +1,6 @@
 package futsalbookingsystem.model;
 
 public class UserData {
-<<<<<<< HEAD
     
     // private attributes
     // public methods
@@ -29,7 +28,6 @@ public class UserData {
       }
       public void setName(String name){
           this.name=name;
-=======
 
     private String email;
     private String password;
@@ -93,8 +91,6 @@ public class UserData {
     public String getPhonenumber() {
         return this.phonenumber;
     }
-<<<<<<< HEAD
-=======
 
     // ✅ Change Password Method
     public boolean changePassword(String oldPassword, String newPassword) {
@@ -103,10 +99,8 @@ public class UserData {
             return true;
         } else {
             return false;
->>>>>>> a05915404c0fba712277757924de6c2f40af654a
         }
     }
->>>>>>> 4f276687ad30d4a70dabd1a39ac5487838c1a866
 }
 
     

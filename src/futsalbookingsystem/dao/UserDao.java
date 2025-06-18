@@ -115,25 +115,24 @@ public class UserDao {
         }
 }
     public boolean updateAccount(String email, String currentPassword, String newUsername, String newPhone, String newEmail) {
-        String query = "UPDATE users SET fname=?, phonenumber=?, email=? WHERE email=? AND fpassword=?";
-        Connection conn = mysql.openConnection();
-        try {
-            PreparedStatement stmnt = conn.prepareStatement(query);
-            stmnt.setString(1, newUsername);
-            stmnt.setString(2, newPhone);
-            stmnt.setString(3, newEmail);
-            stmnt.setString(4, email);
-            stmnt.setString(5, currentPassword);
-            int result = stmnt.executeUpdate();
-            return result > 0;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return false;
-        } finally {
-            mysql.closeConnection(conn);
-        }
+    String query = "UPDATE users SET fname=?, phonenumber=?, email=? WHERE email=? AND fpassword=?";
+    Connection conn = mysql.openConnection();
+    try {
+        PreparedStatement stmnt = conn.prepareStatement(query);
+        stmnt.setString(1, newUsername);
+        stmnt.setString(2, newPhone);
+        stmnt.setString(3, newEmail);
+        stmnt.setString(4, email);
+        stmnt.setString(5, currentPassword);
+        int result = stmnt.executeUpdate();
+        return result > 0;
+    } catch (Exception e) {
+        e.printStackTrace();
+        return false;
+    } finally {
+        mysql.closeConnection(conn);
     }
-
+}
 
 
     public boolean deleteAccount(String email, String password) {

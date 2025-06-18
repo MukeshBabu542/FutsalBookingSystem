@@ -3,28 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/cis-c/OneDrive/Desktop/Futsal%20Booking%20System/FutsalBookingSystem/src/futsalbookingsystem/view/SettingView.java</file>
-            <file>file:/C:/Users/cis-c/OneDrive/Desktop/Futsal%20Booking%20System/FutsalBookingSystem/src/futsalbookingsystem/view/SetBookingTimeView.java</file>
-            <file>file:/C:/Users/cis-c/OneDrive/Desktop/Futsal%20Booking%20System/FutsalBookingSystem/src/futsalbookingsystem/view/LoginView.java</file>
-            <file>file:/C:/Users/cis-c/OneDrive/Desktop/Futsal%20Booking%20System/FutsalBookingSystem/src/futsalbookingsystem/view/HistoryView.java</file>
-            <file>file:/C:/Users/cis-c/OneDrive/Desktop/Futsal%20Booking%20System/FutsalBookingSystem/src/futsalbookingsystem/view/DashboardView.java</file>
-            <file>file:/C:/Users/cis-c/OneDrive/Desktop/Futsal%20Booking%20System/FutsalBookingSystem/src/futsalbookingsystem/view/EventView.java</file>
-            <file>file:/C:/Users/cis-c/OneDrive/Desktop/Futsal%20Booking%20System/FutsalBookingSystem/src/futsalbookingsystem/view/BookingView.java</file>
-            <file>file:/C:/Users/cis-c/OneDrive/Desktop/Futsal%20Booking%20System/FutsalBookingSystem/src/futsalbookingsystem/view/AccDeletion.java</file>
-            <file>file:/C:/Users/cis-c/OneDrive/Desktop/Futsal%20Booking%20System/FutsalBookingSystem/src/futsalbookingsystem/view/RegistrationView.java</file>
-            <file>file:/C:/Users/cis-c/OneDrive/Desktop/Futsal%20Booking%20System/FutsalBookingSystem/src/futsalbookingsystem/FutsalBookingSystem.java</file>
-            <file>file:/C:/Users/cis-c/OneDrive/Desktop/Futsal%20Booking%20System/FutsalBookingSystem/src/futsalbookingsystem/controller/DashboardController.java</file>
-            <file>file:/C:/Users/cis-c/OneDrive/Desktop/Futsal%20Booking%20System/FutsalBookingSystem/src/futsalbookingsystem/controller/LoginController.java</file>
-            <file>file:/C:/Users/cis-c/OneDrive/Desktop/Futsal%20Booking%20System/FutsalBookingSystem/src/futsalbookingsystem/controller/RegistrationController.java</file>
-            <file>file:/C:/Users/cis-c/OneDrive/Desktop/Futsal%20Booking%20System/FutsalBookingSystem/src/futsalbookingsystem/view/ChangeKnownPasswordView.java</file>
-            <file>file:/C:/Users/cis-c/OneDrive/Desktop/Futsal%20Booking%20System/FutsalBookingSystem/src/futsalbookingsystem/controller/email/SMTPMailSender.java</file>
-            <file>file:/C:/Users/cis-c/OneDrive/Desktop/Futsal%20Booking%20System/FutsalBookingSystem/src/futsalbookingsystem/dao/UserDao.java</file>
-            <file>file:/C:/Users/cis-c/OneDrive/Desktop/Futsal%20Booking%20System/FutsalBookingSystem/src/futsalbookingsystem/database/MySqlConnection.java</file>
-            <file>file:/C:/Users/cis-c/OneDrive/Desktop/Futsal%20Booking%20System/FutsalBookingSystem/src/futsalbookingsystem/database/DbConnection.java</file>
-            <file>file:/C:/Users/cis-c/OneDrive/Desktop/Futsal%20Booking%20System/FutsalBookingSystem/src/futsalbookingsystem/model/LoginRequest.java</file>
-            <file>file:/C:/Users/cis-c/OneDrive/Desktop/Futsal%20Booking%20System/FutsalBookingSystem/src/futsalbookingsystem/view/ViewProfileView.java</file>
-            <file>file:/C:/Users/cis-c/OneDrive/Desktop/Futsal%20Booking%20System/FutsalBookingSystem/src/futsalbookingsystem/view/UpdateAccountView.java</file>
-            <file>file:/C:/Users/cis-c/OneDrive/Desktop/Futsal%20Booking%20System/FutsalBookingSystem/src/futsalbookingsystem/view/RatingView.java</file>
+            <file>file:/C:/Users/cis-c/OneDrive/Desktop/Futsalbbokingsystem/FutsalBookingSystem/src/futsalbookingsystem/view/SettingView.java</file>
+            <file>file:/C:/Users/cis-c/OneDrive/Desktop/Futsalbbokingsystem/FutsalBookingSystem/src/futsalbookingsystem/view/RegistrationView.java</file>
+            <file>file:/C:/Users/cis-c/OneDrive/Desktop/Futsalbbokingsystem/FutsalBookingSystem/src/futsalbookingsystem/model/UserData.java</file>
+            <file>file:/C:/Users/cis-c/OneDrive/Desktop/Futsalbbokingsystem/FutsalBookingSystem/src/futsalbookingsystem/controller/LoginController.java</file>
+            <file>file:/C:/Users/cis-c/OneDrive/Desktop/Futsalbbokingsystem/FutsalBookingSystem/src/futsalbookingsystem/dao/UserDao.java</file>
         </group>
     </open-files>
 </project-private>

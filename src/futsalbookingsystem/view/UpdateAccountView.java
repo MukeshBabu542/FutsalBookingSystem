@@ -6,18 +6,55 @@ package futsalbookingsystem.view;
 
 import java.awt.Color;
 
+import javax.swing.JOptionPane;
+
+import futsalbookingsystem.dao.UserDao;
+
 /**
  *
  * @author HP
  */
 public class UpdateAccountView extends javax.swing.JFrame {
+    private String userEmail;
 
     /**
      * Creates new form UpdateAccountView
      */
-    public UpdateAccountView() {
+    public UpdateAccountView(String userEmail) {
+        this.userEmail = userEmail;
         initComponents();
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            handleUpdateAccount();
     }
+    });
+    }
+
+    private void handleUpdateAccount() {
+        String newUsername = jTextField1.getText().trim();
+        String newPhone = jTextField2.getText().trim();
+        String newEmail = jTextField3.getText().trim();
+        String currentPassword = new String(jPasswordField1.getPassword());
+
+        // userEmail should be a field in your class, set when the view is created
+        UserDao userDao = new UserDao();
+        boolean success = userDao.updateAccount(
+            userEmail,          // current user's email (field in this class)
+            currentPassword,    // current password entered by user
+            newUsername,        // new username
+            newPhone,           // new phone
+            newEmail            // new email
+        );
+
+        if (success) {
+            JOptionPane.showMessageDialog(this, "Account updated successfully!");
+            // Optionally, close or refresh the form
+        } else {
+            JOptionPane.showMessageDialog(this, "Incorrect password or update failed.");
+        }
+    }
+
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -260,8 +297,9 @@ public class UpdateAccountView extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-        SettingView settingView = new SettingView();
-        settingView.show();
+        SettingView settingView = new SettingView(userEmail);
+        settingView.setVisible(true);
+        dispose();
 
         dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
@@ -296,7 +334,7 @@ public class UpdateAccountView extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new UpdateAccountView().setVisible(true);
+                new UpdateAccountView("user@example.com").setVisible(true);
             }
         });
     }

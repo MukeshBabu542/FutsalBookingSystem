@@ -4,6 +4,7 @@
  */
 package futsalbookingsystem.view;
 
+import futsalbookingsystem.view.AccDeletion;
 import javax.swing.JOptionPane;
 
 /**
@@ -11,12 +12,22 @@ import javax.swing.JOptionPane;
  * @author HP
  */
 public class SettingView extends javax.swing.JFrame {
+    private String userEmail;
 
     /**
      * Creates new form SettingView
      */
-    public SettingView() {
+    public SettingView(String userEmail) {
+        this.userEmail = userEmail;
         initComponents();
+
+        DeleteAccountBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt){
+                AccDeletion accDeletion = new AccDeletion(userEmail);
+                accDeletion.setVisible(true);
+                SettingView.this.dispose();
+            }
+        });
     }
 
     /**
@@ -212,72 +223,72 @@ public class SettingView extends javax.swing.JFrame {
 
     private void DashboardBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DashboardBtnActionPerformed
         // TODO add your handling code here:
-        DashboardView dashboardView = new DashboardView();
-        dashboardView.show();
+        DashboardView dashboardView = new DashboardView(userEmail);
+        dashboardView.setVisible(true);
+        dispose();
         
         dispose();
     }//GEN-LAST:event_DashboardBtnActionPerformed
 
     private void EventBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EventBtnActionPerformed
         // TODO add your handling code here:
-        EventView eventView = new EventView();
-        eventView.show();
+        EventView eventView = new EventView(userEmail);
+        eventView.setVisible(true);
         
         dispose();
     }//GEN-LAST:event_EventBtnActionPerformed
 
     private void BookingBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BookingBtnActionPerformed
         // TODO add your handling code here:
-        BookingView bookingView = new BookingView();
-        bookingView.show();
+        BookingView bookingView = new BookingView(userEmail);
+        bookingView.setVisible(true);
         
         dispose();
     }//GEN-LAST:event_BookingBtnActionPerformed
 
     private void HostoryBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HostoryBtnActionPerformed
         // TODO add your handling code here:
-        HistoryView historyView  = new HistoryView();
-        historyView.show();
+        HistoryView historyView  = new HistoryView(userEmail);
+        historyView.setVisible(true);
         
         dispose();
     }//GEN-LAST:event_HostoryBtnActionPerformed
 
     private void ChangePasswordBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChangePasswordBtnActionPerformed
         // TODO add your handling code here:
-        ChangeKnownPasswordView changeknowpasswordView  = new ChangeKnownPasswordView();
-        changeknowpasswordView.show();
-        
+        ChangeKnownPasswordView changePasswordView = new ChangeKnownPasswordView(userEmail);
+        changePasswordView.setVisible(true);
         dispose();
     }//GEN-LAST:event_ChangePasswordBtnActionPerformed
 
     private void UpdateInfoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateInfoBtnActionPerformed
         // TODO add your handling code here:
-        UpdateAccountView updateaccountView  = new UpdateAccountView();
-        updateaccountView.show();
-        
+        UpdateAccountView updateView = new UpdateAccountView(userEmail);
+        updateView.setVisible(true);
         dispose();
     }//GEN-LAST:event_UpdateInfoBtnActionPerformed
 
     private void DeleteAccountBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteAccountBtnActionPerformed
         // TODO add your handling code here:
-        AccDeletion accdeletionView  = new AccDeletion();
-        accdeletionView.show();
+        AccDeletion accdeletionView  = new AccDeletion(userEmail);
+        accdeletionView.setVisible(true);
+        dispose();
         
         dispose();
     }//GEN-LAST:event_DeleteAccountBtnActionPerformed
 
     private void ViewprofileBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewprofileBtnActionPerformed
         // TODO add your handling code here:
-        ViewProfileView viewprofileView = new ViewProfileView();
-        viewprofileView.show();
+        ViewProfileView viewprofileView = new ViewProfileView(userEmail);
+        viewprofileView.setVisible(true);
         
         dispose();
     }//GEN-LAST:event_ViewprofileBtnActionPerformed
 
     private void RatingBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RatingBtnActionPerformed
         // TODO add your handling code here:
-        RatingView ratingView = new RatingView();
-        ratingView.show();
+        RatingView ratingView = new RatingView(userEmail);
+        ratingView.setVisible(true);
         
         dispose();
     }//GEN-LAST:event_RatingBtnActionPerformed
@@ -330,7 +341,7 @@ public class SettingView extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new SettingView().setVisible(true);
+                new SettingView("user@example.com").setVisible(true);
             }
         });
     }

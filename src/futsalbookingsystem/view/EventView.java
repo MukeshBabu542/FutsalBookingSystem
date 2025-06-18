@@ -9,11 +9,13 @@ package futsalbookingsystem.view;
  * @author HP
  */
 public class EventView extends javax.swing.JFrame {
+    private String userEmail;
 
     /**
      * Creates new form EventView
      */
-    public EventView() {
+    public EventView(String userEmail) {
+        this.userEmail = userEmail;
         initComponents();
     }
 
@@ -133,32 +135,32 @@ public class EventView extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        DashboardView dashboardView = new DashboardView();
-        dashboardView.show();
+        DashboardView dashboardView = new DashboardView(userEmail);
+        dashboardView.setVisible(true);
         
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-        BookingView bookingView = new BookingView();
-        bookingView.show();
+        BookingView bookingView = new BookingView(userEmail);
+        bookingView.setVisible(true);
         
         dispose();
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-        HistoryView historyView = new HistoryView();
-        historyView.show();
+        HistoryView historyView = new HistoryView(userEmail);
+        historyView.setVisible(true);
         
         dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        SettingView settingView = new SettingView();
-        settingView.show();
+        SettingView settingView = new SettingView(userEmail);
+        settingView.setVisible(true);
         
         dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -193,7 +195,7 @@ public class EventView extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new EventView().setVisible(true);
+                new EventView("user@example.com").setVisible(true);
             }
         });
     }

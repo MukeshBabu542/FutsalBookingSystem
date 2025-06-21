@@ -185,18 +185,16 @@ public class LoginView extends javax.swing.JFrame {
 
     private void passwordBtnFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passwordBtnFocusGained
         // TODO add your handling code here:
-        if (passwordBtn.getText().equals("password")) {
-            passwordBtn.setText(""); // Restore echoing (• is typical)
-            passwordBtn.setForeground(Color.black);
-        }
+        if (String.valueOf(passwordBtn.getPassword()).equals("password")) {
+        passwordBtn.setText(""); // Clear placeholder
+    }
     }//GEN-LAST:event_passwordBtnFocusGained
 
     private void passwordBtnFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passwordBtnFocusLost
         // TODO add your handling code here:
-        if (passwordBtn.getText().equals("")) {
-            passwordBtn.setText("password"); // Restore echoing (• is typical)
-            passwordBtn.setForeground(Color.black);
-        }
+        if (String.valueOf(passwordBtn.getPassword()).isEmpty()) {
+        passwordBtn.setText("password"); // Restore placeholder
+    }
     }//GEN-LAST:event_passwordBtnFocusLost
 
         private void jTextField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusGained

@@ -19,32 +19,36 @@ import java.sql.SQLException;
 public class UserDao {
     MySqlConnection mysql = new MySqlConnection();
     public boolean registration(UserData user){
-      Connection conn = (Connection) mysql.openConnection();
+      Connection conn =mysql.openConnection();
 //      if(conn== null)return false;
          String createTableSQL = "CREATE TABLE IF NOT EXISTS users ("
             + "id INT AUTO_INCREMENT PRIMARY KEY, "               
             + "fname VARCHAR(50) NOT NULL, "
             + "email VARCHAR(100) UNIQUE NOT NULL, "
             + "phonenumber VARCHAR(255) NOT NULL, "
-            + "password String NOT NULL"
+            + "password Varchar(100) NOT NULL"
             + ")";
            try {
             PreparedStatement createtbl= conn.prepareStatement(createTableSQL);
             createtbl.executeUpdate();
         } catch (SQLException ex) {
+            e.printStackTrace();s
             java.util.logging.Logger.getLogger(UserDao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
       String query= "INSERT INTO users(fname,email,phonenumber,password)VALUES(?,?,?,?)";
       try{
           PreparedStatement stmnt = conn.prepareStatement(query);
+          System.out.println("Prepared");
           stmnt.setString(1,user.getName());
           stmnt.setString(2,user.getEmail());
           stmnt.setString(3,user.getPhonenumber());
           stmnt.setString(4,user.getPassword());
-          
+          System.out.println("WIll add");
           int result = stmnt.executeUpdate();
+          System.out.println("Result: "+result);
           return result>0;
       } catch(SQLException e){
+          e.printStackTrace();
          return false; 
           
       } finally{

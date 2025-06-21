@@ -5,6 +5,10 @@ package futsalbookingsystem.model;
  * @author lenovo
  */
 public class UserData {
+
+    public static UserData getCurrentUser() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
     // private attributes
     // public methods

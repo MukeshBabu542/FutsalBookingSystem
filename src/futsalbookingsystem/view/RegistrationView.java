@@ -24,7 +24,7 @@ public class RegistrationView extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jTextField3 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        signinButton = new javax.swing.JButton();
+        RegistrationButton = new javax.swing.JButton();
         nameTextField = new javax.swing.JTextField();
         phoneTextField = new javax.swing.JTextField();
         emailTextField = new javax.swing.JTextField();
@@ -38,6 +38,7 @@ public class RegistrationView extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
 
         jTextField1.setText("jTextField1");
 
@@ -57,11 +58,11 @@ public class RegistrationView extends javax.swing.JFrame {
         jLabel2.setText("Registration");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 10, 310, 70));
 
-        signinButton.setBackground(new java.awt.Color(217, 217, 217));
-        signinButton.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        signinButton.setText("Sign in");
-        signinButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        getContentPane().add(signinButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 480, 200, 40));
+        RegistrationButton.setBackground(new java.awt.Color(217, 217, 217));
+        RegistrationButton.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        RegistrationButton.setText("Registration");
+        RegistrationButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        getContentPane().add(RegistrationButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 480, 200, 40));
 
         nameTextField.setBackground(new java.awt.Color(217, 217, 217));
         nameTextField.setText("   Enter your full name");
@@ -165,7 +166,10 @@ public class RegistrationView extends javax.swing.JFrame {
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 490, -1, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/futsalbookingsystem/imagepicker/Background.png"))); // NOI18N
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, -1, -1));
+
+        jButton3.setText("jButton3");
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 490, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -280,6 +284,7 @@ public class RegistrationView extends javax.swing.JFrame {
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton RegistrationButton;
     private javax.swing.JPasswordField confirmpasswordField;
     private javax.swing.JTextField emailTextField;
     private javax.swing.JButton jButton1;
@@ -301,7 +306,6 @@ public class RegistrationView extends javax.swing.JFrame {
     private javax.swing.JTextField nameTextField;
     private javax.swing.JPasswordField passwordField;
     private javax.swing.JTextField phoneTextField;
-    private javax.swing.JButton signinButton;
     // End of variables declaration//GEN-END:variables
 public javax.swing.JTextField getNameTextField(){
         return nameTextField;
@@ -320,7 +324,7 @@ public javax.swing.JTextField getNameTextField(){
     }   
    // to add action listener to the button
     public void registerUser(ActionListener listener){
-        signinButton.addActionListener(listener);
+        RegistrationButton.addActionListener(listener);
         
     }
 }

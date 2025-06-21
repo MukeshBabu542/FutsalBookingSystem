@@ -20,40 +20,32 @@ import java.sql.SQLException;
 public class UserDao {
     MySqlConnection mysql = new MySqlConnection();
     public boolean registration(UserData user){
-      Connection conn =mysql.openConnection();
+      Connection conn = (Connection) mysql.openConnection();
 //      if(conn== null)return false;
          String createTableSQL = "CREATE TABLE IF NOT EXISTS users ("
             + "id INT AUTO_INCREMENT PRIMARY KEY, "               
             + "fname VARCHAR(50) NOT NULL, "
             + "email VARCHAR(100) UNIQUE NOT NULL, "
             + "phonenumber VARCHAR(255) NOT NULL, "
-<<<<<<< HEAD
             + "fpassword VARCHAR(255) NOT NULL"
-=======
-            + "password Varchar(100) NOT NULL"
->>>>>>> aaku
             + ")";
            try {
             PreparedStatement createtbl= conn.prepareStatement(createTableSQL);
             createtbl.executeUpdate();
         } catch (SQLException ex) {
-            e.printStackTrace();s
             java.util.logging.Logger.getLogger(UserDao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
       String query= "INSERT INTO users(fname,email,phonenumber,fpassword)VALUES(?,?,?,?)";
       try{
           PreparedStatement stmnt = conn.prepareStatement(query);
-          System.out.println("Prepared");
           stmnt.setString(1,user.getName());
           stmnt.setString(2,user.getEmail());
           stmnt.setString(3,user.getPhonenumber());
           stmnt.setString(4,user.getPassword());
-          System.out.println("WIll add");
+          
           int result = stmnt.executeUpdate();
-          System.out.println("Result: "+result);
           return result>0;
       } catch(SQLException e){
-          e.printStackTrace();
          return false; 
           
       } finally{
@@ -122,25 +114,88 @@ public class UserDao {
             mysql.closeConnection(conn);
         }
 }
-    public boolean updateAccount(String email, String currentPassword, String newUsername, String newPhone, String newEmail) {
-        String query = "UPDATE users SET fname=?, phonenumber=?, email=? WHERE email=? AND fpassword=?";
-        Connection conn = mysql.openConnection();
-        try {
-            PreparedStatement stmnt = conn.prepareStatement(query);
-            stmnt.setString(1, newUsername);
-            stmnt.setString(2, newPhone);
-            stmnt.setString(3, newEmail);
-            stmnt.setString(4, email);
-            stmnt.setString(5, currentPassword);
-            int result = stmnt.executeUpdate();
-            return result > 0;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return false;
-        } finally {
-            mysql.closeConnection(conn);
+
+    public UserData getUserByEmail(String email) {
+    String query = "SELECT * FROM users WHERE email=?";
+    Connection conn = mysql.openConnection();
+    try {
+        PreparedStatement stmt = conn.prepareStatement(query);
+        stmt.setString(1, email);
+        ResultSet rs = stmt.executeQuery();
+        if (rs.next()) {
+            String id = rs.getString("id");
+            String fname = rs.getString("fname");
+            String phonenumber = rs.getString("phonenumber");
+            String fpassword = rs.getString("fpassword");
+
+            return new UserData(id, fname, email, phonenumber, fpassword);
         }
+    } catch (Exception e) {
+        e.printStackTrace();
+    } finally {
+        mysql.closeConnection(conn);
     }
+    return null;
+}
+
+
+    public boolean updateAccount(String email, String currentPassword, String newUsername, String newPhone, String newEmail) {
+    String query = "UPDATE users SET fname=?, phonenumber=?, email=? WHERE email=? AND fpassword=?";
+    Connection conn = mysql.openConnection();
+    try {
+        PreparedStatement stmnt = conn.prepareStatement(query);
+        stmnt.setString(1, newUsername);
+        stmnt.setString(2, newPhone);
+        stmnt.setString(3, newEmail);
+        stmnt.setString(4, email);
+        stmnt.setString(5, currentPassword);
+        int result = stmnt.executeUpdate();
+        return result > 0;
+    } catch (Exception e) {
+        e.printStackTrace();
+        return false;
+    } finally {
+        mysql.closeConnection(conn);
+    }
+}
+
+    public boolean updateUserPhotoPath(String email, String photoPath) {
+    String query = "UPDATE users SET photo_path=? WHERE email=?";
+    Connection conn = mysql.openConnection();
+    try {
+        PreparedStatement stmnt = conn.prepareStatement(query);
+        stmnt.setString(1, photoPath);
+        stmnt.setString(2, email);
+        int result = stmnt.executeUpdate();
+        return result > 0;
+    } catch (Exception e) {
+        e.printStackTrace();
+        return false;
+    } finally {
+        mysql.closeConnection(conn);
+    }
+}
+
+
+    public String getUserPhotoPath(String email) {
+    String query = "SELECT photo_path FROM users WHERE email=?";
+    Connection conn = mysql.openConnection();
+    try {
+        PreparedStatement stmnt = conn.prepareStatement(query);
+        stmnt.setString(1, email);
+        ResultSet rs = stmnt.executeQuery();
+        if (rs.next()) {
+            return rs.getString("photo_path");
+        }
+        return null;
+    } catch (Exception e) {
+        e.printStackTrace();
+        return null;
+    } finally {
+        mysql.closeConnection(conn);
+    }
+}
+    
 
 
     public boolean deleteAccount(String email, String password) {
@@ -159,9 +214,6 @@ public class UserDao {
             mysql.closeConnection(conn);
         }
     }
-
-
-
 }
 //    public boolean resetPassword(ResetPasswordRequest resetReq){
 //        // Step1: write a query in a string

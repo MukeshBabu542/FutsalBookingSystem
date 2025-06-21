@@ -27,6 +27,27 @@ public class ChangeKnownPasswordView extends javax.swing.JFrame {
     });
     }
 
+    private void handleChangePassword() {
+        String oldPassword = new String(jPasswordField1.getPassword());
+        String newPassword = new String(jPasswordField2.getPassword());
+        String confirmPassword = new String(jPasswordField3.getPassword());
+
+        if (!newPassword.equals(confirmPassword)) {
+            JOptionPane.showMessageDialog(this, "New passwords do not match!");
+            return;
+        }
+
+        UserDao userDao = new UserDao();
+        boolean success = userDao.changePassword(oldPassword, newPassword);
+
+        if (success) {
+            JOptionPane.showMessageDialog(this, "Password changed successfully!");
+            // Optionally, close window or redirect
+        } else {
+            JOptionPane.showMessageDialog(this, "Old password is incorrect or an error occurred.");
+        }
+    }
+
 
 
     /**

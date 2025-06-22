@@ -22,7 +22,7 @@ public class Rating {
     }
 
     public int getUserId() { return userId; }
-    public int getBookingId() { return bookingId; }
+
     public int getRating() { return rating; }
     public String getComment() { return comment; }
 }

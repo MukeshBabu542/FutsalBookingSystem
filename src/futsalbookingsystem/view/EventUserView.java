@@ -4,10 +4,16 @@
  */
 package futsalbookingsystem.view;
 
+import futsalbookingsystem.dao.EventDao;
 import futsalbookingsystem.dao.UserDao;
 import java.awt.Image;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -32,6 +38,99 @@ public class EventUserView extends javax.swing.JFrame {
             }
         }
     }
+    
+     private void updateEventImagePath(String imagePath) {
+        EventDao eventDao = new EventDao();
+        eventDao.updateEventImagePath(imagePath);
+    }
+
+    private void displayEventImage(String imagePath) {
+        try {
+            File imageFile = new File(imagePath);
+            if (imageFile.exists()) {
+                ImageIcon icon = new ImageIcon(imageFile.getAbsolutePath());
+                // Replace jLabel2 with your actual image display component
+                Image scaledImage = icon.getImage().getScaledInstance(
+                    jLabel14.getWidth(), 
+                    jLabel14.getHeight(), 
+                    Image.SCALE_SMOOTH
+                );
+                jLabel14.setIcon(new ImageIcon(scaledImage));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void loadExistingEventImage() {
+        EventDao eventDao = new EventDao();
+        String imagePath = eventDao.getEventImagePath();
+        if (imagePath != null && !imagePath.isEmpty()) {
+            displayEventImage(imagePath);
+        }
+    }
+
+    private void uploadEventImage() {
+        JFileChooser fileChooser = new JFileChooser();
+        
+        // Set file filter to only show images
+        fileChooser.setFileFilter(new javax.swing.filechooser.FileFilter() {
+            @Override
+            public boolean accept(File f) {
+                if (f.isDirectory()) return true;
+                String extension = getFileExtension(f.getName()).toLowerCase();
+                return extension.equals("jpg") || extension.equals("jpeg") || 
+                    extension.equals("png") || extension.equals("gif") || 
+                    extension.equals("bmp");
+            }
+            
+            @Override
+            public String getDescription() {
+                return "Image Files (*.jpg, *.jpeg, *.png, *.gif, *.bmp)";
+            }
+        });
+        
+        fileChooser.setDialogTitle("Select Event Image");
+        
+        int result = fileChooser.showOpenDialog(this);
+        if (result == JFileChooser.APPROVE_OPTION) {
+            File selectedFile = fileChooser.getSelectedFile();
+            
+            try {
+                // Create events directory if it doesn't exist
+                File eventsDir = new File("events/images");
+                if (!eventsDir.exists()) {
+                    eventsDir.mkdirs();
+                }
+                
+                // Copy file to events directory with unique name
+                String fileName = "event_image." + getFileExtension(selectedFile.getName());
+                File destinationFile = new File(eventsDir, fileName);
+                
+                // Copy the selected file to destination
+                copyFile(selectedFile, destinationFile);
+                
+                // Update database with new image path
+                updateEventImagePath(destinationFile.getAbsolutePath());
+                
+                // Display the uploaded image
+                displayEventImage(destinationFile.getAbsolutePath());
+                
+                JOptionPane.showMessageDialog(this, 
+                    "Event image uploaded successfully!", 
+                    "Success", 
+                    JOptionPane.INFORMATION_MESSAGE);
+                    
+            } catch (IOException e) {
+                JOptionPane.showMessageDialog(this, 
+                    "Error uploading image: " + e.getMessage(), 
+                    "Error", 
+                    JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }
+
+        }
 
     /**
      * This method is called from within the constructor to initialize the form.

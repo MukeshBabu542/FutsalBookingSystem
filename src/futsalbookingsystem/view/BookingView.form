@@ -1938,7 +1938,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel2">
+    <Component class="javax.swing.JLabel" name="jLabel118">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>

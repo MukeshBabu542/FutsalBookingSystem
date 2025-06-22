@@ -27,11 +27,10 @@ public class UserDao {
             + "fname VARCHAR(50) NOT NULL, "
             + "email VARCHAR(100) UNIQUE NOT NULL, "
             + "phonenumber VARCHAR(255) NOT NULL, "
-<<<<<<< HEAD
+
             + "fpassword VARCHAR(255) NOT NULL"
-=======
-            + "password Varchar(100) NOT NULL"
->>>>>>> aaku
+
+           
             + ")";
            try {
             PreparedStatement createtbl= conn.prepareStatement(createTableSQL);

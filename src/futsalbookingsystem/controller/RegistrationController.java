@@ -31,6 +31,8 @@ public class RegistrationController {
     }
     public void close(){
         this.registrationView.dispose();
+      
+
         
     }
     class RegistrationUser implements ActionListener{
@@ -57,10 +59,16 @@ public class RegistrationController {
                    LoginController loginController = new LoginController(loginView);
                    loginController.open();
                    
+
+                   
                }else{
                    JOptionPane.showMessageDialog(registrationView,"Failed to Register");
                }
            }
+           if (!email.matches("^[\\w.-]+@[\\w.-]+\\.\\w+$")) {
+    JOptionPane.showMessageDialog(registrationView, "Invalid email format.");
+    return;
+}
            
         }
         

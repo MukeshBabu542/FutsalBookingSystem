@@ -4,20 +4,45 @@
  */
 package futsalbookingsystem.view;
 
+import futsalbookingsystem.dao.UserDao;
+import futsalbookingsystem.model.UserData;
+
 import java.awt.Color;
+import java.awt.Image;
+import java.io.File;
+import javax.swing.ImageIcon;
 
 /**
  *
  * @author HP
  */
 public class ViewProfileView extends javax.swing.JFrame {
-
+    private String userEmail;
     /**
      * Creates new form ViewProfileView
      */
-    public ViewProfileView() {
+    public ViewProfileView(String userEmail) {
+        this.userEmail = userEmail;
         initComponents();
-    }
+        
+        UserDao dao = new UserDao();
+        String imagePath = dao.getUserPhotoPath(userEmail);
+        if (imagePath != null) {
+            File imgFile = new File(imagePath);
+            if (imgFile.exists()) {
+                ImageIcon icon = new ImageIcon(imgFile.getAbsolutePath());
+                Image img = icon.getImage().getScaledInstance(jLabel8.getWidth(), jLabel8.getHeight(), Image.SCALE_SMOOTH);
+                jLabel8.setIcon(new ImageIcon(img));
+            }
+        }
+
+        UserData user = dao.getUserByEmail(userEmail);
+        if (user != null) {
+            jTextField1.setText(user.getName());
+            jTextField2.setText(user.getPhonenumber());
+            jTextField3.setText(user.getEmail());
+        }
+            }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -60,7 +85,6 @@ public class ViewProfileView extends javax.swing.JFrame {
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 250, -1, -1));
 
         jTextField1.setBackground(new java.awt.Color(217, 217, 217));
-        jTextField1.setText("   Esam Miya");
         jTextField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jTextField1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -78,7 +102,6 @@ public class ViewProfileView extends javax.swing.JFrame {
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 150, 200, 30));
 
         jTextField2.setBackground(new java.awt.Color(217, 217, 217));
-        jTextField2.setText("   9800000000");
         jTextField2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jTextField2.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -96,7 +119,6 @@ public class ViewProfileView extends javax.swing.JFrame {
         getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 200, 200, 30));
 
         jTextField3.setBackground(new java.awt.Color(217, 217, 217));
-        jTextField3.setText("   esammiya12@gmail.com");
         jTextField3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jTextField3.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -177,9 +199,8 @@ public class ViewProfileView extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-        SettingView settingView = new SettingView();
-        settingView.show();
-
+        SettingView settingView = new SettingView(userEmail);
+        settingView.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -213,7 +234,7 @@ public class ViewProfileView extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ViewProfileView().setVisible(true);
+                new ViewProfileView("user@example.com").setVisible(true);
             }
         });
     }

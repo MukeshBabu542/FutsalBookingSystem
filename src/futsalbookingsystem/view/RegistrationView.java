@@ -36,6 +36,7 @@ public class RegistrationView extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
 
         jTextField1.setText("jTextField1");
@@ -58,9 +59,9 @@ public class RegistrationView extends javax.swing.JFrame {
 
         signinButton.setBackground(new java.awt.Color(217, 217, 217));
         signinButton.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        signinButton.setText("Sign in");
+        signinButton.setText("Register");
         signinButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        getContentPane().add(signinButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 480, 200, 40));
+        getContentPane().add(signinButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 480, 200, 40));
 
         nameTextField.setBackground(new java.awt.Color(217, 217, 217));
         nameTextField.setText("   Enter your full name");
@@ -154,6 +155,17 @@ public class RegistrationView extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel8.setText("Enter your email");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 256, -1, 20));
+
+        jButton3.setBackground(new java.awt.Color(217, 217, 217));
+        jButton3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jButton3.setText("Login");
+        jButton3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 480, 80, 40));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/futsalbookingsystem/imagepicker/Background.png"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -258,6 +270,14 @@ public class RegistrationView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_confirmpasswordFieldActionPerformed
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        LoginView loginView = new LoginView();
+        loginView.show();
+        
+        dispose();
+    }//GEN-LAST:event_jButton3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -267,6 +287,7 @@ public class RegistrationView extends javax.swing.JFrame {
     private javax.swing.JTextField emailTextField;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

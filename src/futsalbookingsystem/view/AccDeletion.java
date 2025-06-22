@@ -6,6 +6,10 @@ package futsalbookingsystem.view;
 
 import java.awt.Color;
 
+import javax.swing.JOptionPane;
+
+import futsalbookingsystem.dao.UserDao;
+
 /**
  *
  * @author ASUS
@@ -15,7 +19,10 @@ public class AccDeletion extends javax.swing.JFrame {
     /**
      * Creates new form AccDeletion
      */
-    public AccDeletion() {
+    private String userEmail;
+    
+    public AccDeletion(String userEmail) {
+        this.userEmail = userEmail;
         initComponents();
     }
 
@@ -149,14 +156,33 @@ public class AccDeletion extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jPasswordField1ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
+        String password = new String(jPasswordField1.getPassword());
+
+        if (password.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter your password.");
+            return;
+        }
+
+        UserDao userDao = new UserDao();
+        boolean success = userDao.deleteAccount(userEmail, password);
+
+        if (success) {
+            JOptionPane.showMessageDialog(this, "Account deleted successfully.");
+            // Redirect to login view
+            LoginView loginView = new LoginView();
+            loginView.setVisible(true);
+            this.dispose(); // Close the current window
+        } else {
+            JOptionPane.showMessageDialog(this, "Incorrect email or password. Account not deleted.");
+        }
+    }
+
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-        SettingView settingView = new SettingView();
-        settingView.show();
+        SettingView settingView = new SettingView(userEmail);
+        settingView.setVisible(true);
         
         dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
@@ -191,7 +217,8 @@ public class AccDeletion extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AccDeletion().setVisible(true);
+                new AccDeletion("test@example.com").setVisible(true);
+
             }
         });
     }

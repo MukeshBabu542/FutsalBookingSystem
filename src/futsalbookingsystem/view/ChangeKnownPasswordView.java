@@ -4,18 +4,51 @@
  */
 package futsalbookingsystem.view;
 
+import javax.swing.JOptionPane;
+
+import futsalbookingsystem.dao.UserDao;
+
 /**
  *
  * @author HP
  */
 public class ChangeKnownPasswordView extends javax.swing.JFrame {
-
+    private String userEmail;
     /**
      * Creates new form ChangeKnownPasswordView
      */
-    public ChangeKnownPasswordView() {
+    public ChangeKnownPasswordView(String userEmail) {
+        this.userEmail = userEmail;
         initComponents();
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            handleChangePassword();
+        }
+    });
     }
+
+    private void handleChangePassword() {
+        String oldPassword = new String(jPasswordField1.getPassword());
+        String newPassword = new String(jPasswordField2.getPassword());
+        String confirmPassword = new String(jPasswordField3.getPassword());
+
+        if (!newPassword.equals(confirmPassword)) {
+            JOptionPane.showMessageDialog(this, "New password do not match!");
+            return;
+        }
+
+        UserDao userDao = new UserDao();
+        boolean success = userDao.changePassword(oldPassword, newPassword);
+
+        if (success) {
+            JOptionPane.showMessageDialog(this, "Password changed successfully!");
+            // Optionally, close window or redirect
+        } else {
+            JOptionPane.showMessageDialog(this, "Old password is not correct or an error occurred.");
+        }
+    }
+
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -57,6 +90,11 @@ public class ChangeKnownPasswordView extends javax.swing.JFrame {
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
                 jPasswordField1FocusLost(evt);
+            }
+        });
+        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPasswordField1ActionPerformed(evt);
             }
         });
         getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 220, 250, 35));
@@ -145,11 +183,14 @@ public class ChangeKnownPasswordView extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-        SettingView settingView = new SettingView();
-        settingView.show();
-
+        SettingView settingView = new SettingView(userEmail);
+        settingView.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPasswordField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -180,8 +221,9 @@ public class ChangeKnownPasswordView extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
-                new ChangeKnownPasswordView().setVisible(true);
+                new ChangeKnownPasswordView("user@example.com").setVisible(true);
             }
         });
     }
@@ -198,4 +240,25 @@ public class ChangeKnownPasswordView extends javax.swing.JFrame {
     private javax.swing.JPasswordField jPasswordField2;
     private javax.swing.JPasswordField jPasswordField3;
     // End of variables declaration//GEN-END:variables
+
+    public Object getChangeButton() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public Object getOldPasswordField() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public Object getNewPasswordField() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public Object getConfirmPasswordField() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
+
+
+
+
+

@@ -6,18 +6,46 @@ package futsalbookingsystem.view;
 
 // ... any other imports
 
+import futsalbookingsystem.dao.UserDao;
+import java.awt.Image;
+import java.io.File;
+import javax.swing.ImageIcon;
+
+
 
 /**
  *
  * @author HP
  */
 public class DashboardView extends javax.swing.JFrame {
-
     /**
      * Creates new form DashboardView
      */
-    public DashboardView() {
+    private String userEmail;
+    public DashboardView(String email) {
+        this.userEmail=email;
         initComponents();
+        
+        UserDao dao = new UserDao();
+        String imagePath = dao.getUserPhotoPath(userEmail);
+        if (imagePath != null) {
+            File imgFile = new File(imagePath);
+            if (imgFile.exists()) {
+                ImageIcon icon = new ImageIcon(imgFile.getAbsolutePath());
+                Image img = icon.getImage().getScaledInstance(jLabel8.getWidth(), jLabel8.getHeight(), Image.SCALE_SMOOTH);
+                jLabel8.setIcon(new ImageIcon(img));
+            }
+        }
+    }
+
+    private void setupListeners() {
+    jButton3.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            SettingView settingsView = new SettingView(userEmail);
+            settingsView.setVisible(true);
+            DashboardView.this.dispose();
+        }
+    });
     }
 
     /**
@@ -41,7 +69,7 @@ public class DashboardView extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
         jPanel10 = new javax.swing.JPanel();
         DashboardFrame = new javax.swing.JLabel();
@@ -109,8 +137,8 @@ public class DashboardView extends javax.swing.JFrame {
                             .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(63, 63, 63)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(22, Short.MAX_VALUE))
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -126,7 +154,7 @@ public class DashboardView extends javax.swing.JFrame {
                 .addGap(28, 28, 28))
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 90, 260, 400));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 90, 280, 400));
 
         jPanel7.setBackground(new java.awt.Color(102, 102, 102));
 
@@ -180,9 +208,8 @@ public class DashboardView extends javax.swing.JFrame {
             }
         });
 
-        jButton6.setBackground(new java.awt.Color(217, 217, 217));
-        jButton6.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        jButton6.setText("Logout");
+        jLabel8.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -191,25 +218,30 @@ public class DashboardView extends javax.swing.JFrame {
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel3))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGap(24, 24, 24)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(15, Short.MAX_VALUE))
+                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel3))))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 230, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jButton1)
                 .addGap(18, 18, 18)
                 .addComponent(jButton2)
@@ -219,9 +251,7 @@ public class DashboardView extends javax.swing.JFrame {
                 .addComponent(jButton4)
                 .addGap(18, 18, 18)
                 .addComponent(jButton3)
-                .addGap(18, 18, 18)
-                .addComponent(jButton6)
-                .addGap(12, 12, 12))
+                .addGap(56, 56, 56))
         );
 
         getContentPane().add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 570));
@@ -270,32 +300,32 @@ public class DashboardView extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        EventView eventView= new EventView();
-        eventView.show();
+        EventView eventView= new EventView(userEmail);
+        eventView.setVisible(true);
         
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-        BookingView bookingView= new BookingView();
-        bookingView.show();
+        BookingView bookingView= new BookingView(userEmail);
+        bookingView.setVisible(true);
         
         dispose();
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-        HistoryView historyView = new HistoryView();
-        historyView.show();
+        HistoryView historyView = new HistoryView(userEmail);
+        historyView.setVisible(true);
         
         dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        SettingView settingView = new SettingView();
-        settingView.show();
+        SettingView settingView = new SettingView(userEmail);
+        settingView.setVisible(true);
         
         dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -309,6 +339,10 @@ public class DashboardView extends javax.swing.JFrame {
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
+        String userEmail = "user@example.com";
+        DashboardView dashboard = new DashboardView(userEmail);
+        dashboard.setVisible(true);
+        
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -330,7 +364,7 @@ public class DashboardView extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new DashboardView().setVisible(true);
+                new DashboardView("user@example.com").setVisible(true);
             }
         });
     }
@@ -342,9 +376,9 @@ public class DashboardView extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

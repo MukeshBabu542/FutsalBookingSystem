@@ -1,80 +1,32 @@
-
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
 package futsalbookingsystem.view;
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-
-import javax.swing.ImageIcon;
-import javax.swing.JFileChooser;
-import javax.swing.JOptionPane;
 
 import futsalbookingsystem.dao.EventDao;
 import futsalbookingsystem.dao.UserDao;
 import java.awt.Image;
-import java.awt.event.FocusAdapter;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 
 /**
  *
- * @author HP
+ * @author ASUS
  */
-public class EventView extends javax.swing.JFrame {
-    private String userEmail;
+public class EventUserView extends javax.swing.JFrame {
 
     /**
-     * Creates new form EventView
+     * Creates new form EventUserView
      */
-    public EventView(String userEmail) {
-        this.userEmail = userEmail;
+    public EventUserView() {
         initComponents();
-        loadExistingEventImage();
-
-        EventDao eventDao = new EventDao();
-        Map<String, String> eventData = eventDao.loadEvent();
-
-        jTextField1.setText(eventData.getOrDefault("name", ""));
-        jTextField2.setText(eventData.getOrDefault("datetime", ""));
-        jTextField3.setText(eventData.getOrDefault("registration_deadline", ""));
-        jTextField4.setText(eventData.getOrDefault("game_duration", ""));
-        jTextField5.setText(eventData.getOrDefault("dress_code", ""));
-        jTextField6.setText(eventData.getOrDefault("registration_fee", ""));
-        jTextField7.setText(eventData.getOrDefault("payment_options", ""));
-
-        FocusAdapter saveListener = new java.awt.event.FocusAdapter() {
-        @Override
-        public void focusLost(java.awt.event.FocusEvent evt) {
-            Map<String, String> data = new HashMap<>();
-            data.put("name", jTextField1.getText().trim());
-            data.put("datetime", jTextField2.getText().trim());
-            data.put("registration_deadline", jTextField3.getText().trim());
-            data.put("game_duration", jTextField4.getText().trim());
-            data.put("dress_code", jTextField5.getText().trim());
-            data.put("registration_fee", jTextField6.getText().trim());
-            data.put("payment_options", jTextField7.getText().trim());
-
-            EventDao dao = new EventDao();
-            dao.saveEvent(data);
-        }
-    };
-
-        // Attach listener to all text fields
-        jTextField1.addFocusListener(saveListener);
-        jTextField2.addFocusListener(saveListener);
-        jTextField3.addFocusListener(saveListener);
-        jTextField4.addFocusListener(saveListener);
-        jTextField5.addFocusListener(saveListener);
-        jTextField6.addFocusListener(saveListener);
-        jTextField7.addFocusListener(saveListener);
-
         
-
-
-
-
-
         UserDao dao = new UserDao();
         String imagePath = dao.getUserPhotoPath(userEmail);
         if (imagePath != null) {
@@ -86,8 +38,8 @@ public class EventView extends javax.swing.JFrame {
             }
         }
     }
-
-    private void updateEventImagePath(String imagePath) {
+    
+     private void updateEventImagePath(String imagePath) {
         EventDao eventDao = new EventDao();
         eventDao.updateEventImagePath(imagePath);
     }
@@ -196,8 +148,6 @@ public class EventView extends javax.swing.JFrame {
                 fos.write(buffer, 0, length);
             }
         }
-    }
-
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -312,14 +262,14 @@ public class EventView extends javax.swing.JFrame {
                                 .addGap(6, 6, 6)
                                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel3))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton1)
@@ -339,13 +289,12 @@ public class EventView extends javax.swing.JFrame {
         jButton6.setBackground(new java.awt.Color(217, 217, 217));
         jButton6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButton6.setText("Register your Team");
-        jButton6.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 480, 250, 40));
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 480, 200, 40));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel2.setText("Event Details");
@@ -420,7 +369,7 @@ public class EventView extends javax.swing.JFrame {
         jButton7.setBackground(new java.awt.Color(217, 217, 217));
         jButton7.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jButton7.setText("Upload");
-        jButton7.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jButton7.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton7ActionPerformed(evt);
@@ -439,7 +388,7 @@ public class EventView extends javax.swing.JFrame {
         // TODO add your handling code here:
         DashboardView dashboardView = new DashboardView(userEmail);
         dashboardView.setVisible(true);
-        
+
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -447,7 +396,7 @@ public class EventView extends javax.swing.JFrame {
         // TODO add your handling code here:
         BookingView bookingView = new BookingView(userEmail);
         bookingView.setVisible(true);
-        
+
         dispose();
     }//GEN-LAST:event_jButton5ActionPerformed
 
@@ -455,7 +404,7 @@ public class EventView extends javax.swing.JFrame {
         // TODO add your handling code here:
         AboutView historyView = new AboutView(userEmail);
         historyView.setVisible(true);
-        
+
         dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -463,7 +412,7 @@ public class EventView extends javax.swing.JFrame {
         // TODO add your handling code here:
         SettingView settingView = new SettingView(userEmail);
         settingView.setVisible(true);
-        
+
         dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -495,20 +444,20 @@ public class EventView extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(EventView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EventUserView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(EventView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EventUserView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(EventView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EventUserView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(EventView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EventUserView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new EventView("user@example.com").setVisible(true);
+                new EventUserView().setVisible(true);
             }
         });
     }

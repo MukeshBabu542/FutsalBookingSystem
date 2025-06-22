@@ -205,7 +205,11 @@ public class AboutView extends javax.swing.JFrame {
                                 .addGap(6, 6, 6)
                                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel3))))
+<<<<<<< HEAD
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+=======
                 .addContainerGap(14, Short.MAX_VALUE))
+>>>>>>> origin/main
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -234,6 +238,9 @@ public class AboutView extends javax.swing.JFrame {
         getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 20, -1, -1));
 
         jLabel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+<<<<<<< HEAD
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 120, 350, 250));
+=======
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 120, 270, 190));
 
         jLabel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -241,6 +248,7 @@ public class AboutView extends javax.swing.JFrame {
 
         jLabel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 350, 280, 150));
+>>>>>>> origin/main
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/futsalbookingsystem/imagepicker/Background.png"))); // NOI18N

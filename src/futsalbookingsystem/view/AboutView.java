@@ -22,13 +22,13 @@ import java.awt.Image;
  *
  * @author HP
  */
-public class HistoryView extends javax.swing.JFrame {
+public class AboutView extends javax.swing.JFrame {
     private String userEmail;
 
     /**
      * Creates new form HistoryView
      */
-    public HistoryView(String userEmail) {
+    public AboutView(String userEmail) {
         this.userEmail = userEmail;
         initComponents();
         showTeamsInTable(); 
@@ -284,20 +284,21 @@ public class HistoryView extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(HistoryView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AboutView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(HistoryView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AboutView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(HistoryView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AboutView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(HistoryView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AboutView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new HistoryView("user@example.com").setVisible(true);
+                new AboutView("user@example.com").setVisible(true);
             }
         });
     }

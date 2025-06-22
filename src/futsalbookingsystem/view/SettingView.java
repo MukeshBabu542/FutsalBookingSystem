@@ -276,7 +276,7 @@ public class SettingView extends javax.swing.JFrame {
 
     private void HostoryBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HostoryBtnActionPerformed
         // TODO add your handling code here:
-        HistoryView historyView  = new HistoryView(userEmail);
+        AboutView historyView  = new AboutView(userEmail);
         historyView.setVisible(true);
         
         dispose();

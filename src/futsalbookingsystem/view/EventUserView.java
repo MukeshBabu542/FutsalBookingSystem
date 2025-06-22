@@ -130,6 +130,23 @@ public class EventUserView extends javax.swing.JFrame {
         }
     }
 
+    private String getFileExtension(String fileName) {
+        int lastDot = fileName.lastIndexOf('.');
+        if (lastDot > 0 && lastDot < fileName.length() - 1) {
+            return fileName.substring(lastDot + 1);
+        }
+        return "";
+    }
+
+    private void copyFile(File source, File destination) throws IOException {
+        try (FileInputStream fis = new FileInputStream(source);
+            FileOutputStream fos = new FileOutputStream(destination)) {
+            
+            byte[] buffer = new byte[1024];
+            int length;
+            while ((length = fis.read(buffer)) > 0) {
+                fos.write(buffer, 0, length);
+            }
         }
 
     /**

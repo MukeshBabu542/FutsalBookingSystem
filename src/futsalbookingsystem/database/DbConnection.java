@@ -14,9 +14,9 @@ import java.sql.SQLException;
 public interface DbConnection {
     Connection openConnection();
     void closeConnection(Connection conn);
-<<<<<<< HEAD
-}
-=======
+//<<<<<<< HEAD
+//}
+//=======
 }
 //public class MySqlConnection implements DbConnection {
 //    private static final String URL = "jdbc:mysql://localhost:3306/futsal"; // Replace with your DB
@@ -45,4 +45,4 @@ public interface DbConnection {
 //        }
 //    }
 //}
->>>>>>> aaku
+

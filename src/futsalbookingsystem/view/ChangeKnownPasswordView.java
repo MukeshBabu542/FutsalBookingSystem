@@ -33,7 +33,7 @@ public class ChangeKnownPasswordView extends javax.swing.JFrame {
         String confirmPassword = new String(jPasswordField3.getPassword());
 
         if (!newPassword.equals(confirmPassword)) {
-            JOptionPane.showMessageDialog(this, "New passwords do not match!");
+            JOptionPane.showMessageDialog(this, "New password do not match!");
             return;
         }
 
@@ -44,7 +44,7 @@ public class ChangeKnownPasswordView extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Password changed successfully!");
             // Optionally, close window or redirect
         } else {
-            JOptionPane.showMessageDialog(this, "Old password is incorrect or an error occurred.");
+            JOptionPane.showMessageDialog(this, "Old password is not correct or an error occurred.");
         }
     }
 

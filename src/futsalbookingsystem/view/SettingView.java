@@ -284,7 +284,7 @@ public class SettingView extends javax.swing.JFrame {
 
     private void ChangePasswordBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChangePasswordBtnActionPerformed
         // TODO add your handling code here:
-        ChangeKnownPasswordView changePasswordView = new ChangeKnownPasswordView(userEmail);
+        ChangePasswordView changePasswordView = new ChangePasswordView(userEmail);
         changePasswordView.setVisible(true);
         dispose();
     }//GEN-LAST:event_ChangePasswordBtnActionPerformed

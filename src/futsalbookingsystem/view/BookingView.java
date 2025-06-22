@@ -16,6 +16,10 @@ import java.awt.Image;
  *
  * @author HP
  */
+import javax.swing.*;
+import java.awt.*;
+
+
 public class BookingView extends javax.swing.JFrame {
     private String userEmail;
 
@@ -777,6 +781,11 @@ public class BookingView extends javax.swing.JFrame {
         jLabel49 = new javax.swing.JLabel();
         jLabel50 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+
+        jLabel4.setText("jLabel4");
+
+        jLabel5.setText("jLabel5");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1498,7 +1507,11 @@ public class BookingView extends javax.swing.JFrame {
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/futsalbookingsystem/imagepicker/Background.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jLabel1.setText("asda");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 970, -1));
+
+        jLabel2.setText("jLabel2");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 90, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -1733,6 +1746,9 @@ public class BookingView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel99;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel7;
+<<<<<<< HEAD
+    private javax.swing.JSpinner jSpinner1;
+=======
     private javax.swing.JSpinner jSpinner2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField11;
@@ -1746,4 +1762,5 @@ public class BookingView extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField19;
     private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
+>>>>>>> 805abf98614a3a91ffdbebac3a560716349b57a6
 }

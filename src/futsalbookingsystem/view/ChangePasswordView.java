@@ -12,12 +12,12 @@ import futsalbookingsystem.dao.UserDao;
  *
  * @author HP
  */
-public class ChangeKnownPasswordView extends javax.swing.JFrame {
+public class ChangePasswordView extends javax.swing.JFrame {
     private String userEmail;
     /**
      * Creates new form ChangeKnownPasswordView
      */
-    public ChangeKnownPasswordView(String userEmail) {
+    public ChangePasswordView(String userEmail) {
         this.userEmail = userEmail;
         initComponents();
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -75,11 +75,11 @@ public class ChangeKnownPasswordView extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         jLabel2.setText("Change Password");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 70, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 60, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel3.setText("Enter your old Password");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 200, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 180, -1, -1));
 
         jPasswordField1.setBackground(new java.awt.Color(217, 217, 217));
         jPasswordField1.setText("Enter your old password");
@@ -97,11 +97,11 @@ public class ChangeKnownPasswordView extends javax.swing.JFrame {
                 jPasswordField1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 220, 250, 35));
+        getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 200, 250, 35));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setText("Enter your new Password");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 290, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 260, -1, -1));
 
         jPasswordField2.setBackground(new java.awt.Color(217, 217, 217));
         jPasswordField2.setText("Enter your old password");
@@ -114,11 +114,11 @@ public class ChangeKnownPasswordView extends javax.swing.JFrame {
                 jPasswordField2FocusLost(evt);
             }
         });
-        getContentPane().add(jPasswordField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 310, 250, 35));
+        getContentPane().add(jPasswordField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 280, 250, 35));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel5.setText("Confirm your password");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 380, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 350, -1, -1));
 
         jPasswordField3.setBackground(new java.awt.Color(217, 217, 217));
         jPasswordField3.setText("Enter your old password");
@@ -131,14 +131,19 @@ public class ChangeKnownPasswordView extends javax.swing.JFrame {
                 jPasswordField3FocusLost(evt);
             }
         });
-        getContentPane().add(jPasswordField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 400, 250, 35));
+        getContentPane().add(jPasswordField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 370, 250, 35));
 
         jButton1.setBackground(new java.awt.Color(217, 217, 217));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jButton1.setText("Button");
+        jButton1.setText("Change");
         jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 470, 170, 40));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 430, 170, 40));
 
         jButton4.setBackground(new java.awt.Color(204, 204, 204));
         jButton4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -209,21 +214,22 @@ public class ChangeKnownPasswordView extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ChangeKnownPasswordView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ChangePasswordView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ChangeKnownPasswordView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ChangePasswordView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ChangeKnownPasswordView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ChangePasswordView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ChangeKnownPasswordView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ChangePasswordView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new ChangeKnownPasswordView("user@example.com").setVisible(true);
+                new ChangePasswordView("user@example.com").setVisible(true);
             }
         });
     }

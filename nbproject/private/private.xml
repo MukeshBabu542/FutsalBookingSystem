@@ -3,7 +3,6 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
             <file>file:/Users/aakirti/Documents/FBT/FutsalBookingSystem/src/futsalbookingsystem/controller/LoginController.java</file>
             <file>file:/Users/aakirti/Documents/FBT/FutsalBookingSystem/src/futsalbookingsystem/model/LoginRequest.java</file>
             <file>file:/Users/aakirti/Documents/FBT/FutsalBookingSystem/src/futsalbookingsystem/view/LoginView.java</file>
@@ -27,33 +26,15 @@
             <file>file:/Users/aakirti/Documents/FBT/FutsalBookingSystem/src/futsalbookingsystem/view/UpdateAccountView.java</file>
             <file>file:/Users/aakirti/Documents/FBT/FutsalBookingSystem/src/futsalbookingsystem/view/ViewProfileView.java</file>
             <file>file:/Users/aakirti/Documents/FBT/FutsalBookingSystem/src/futsalbookingsystem/controller/DashboardController.java</file>
-            <file>file:/Users/aakirti/Documents/FBT/FutsalBookingSystem/src/futsalbookingsystem/view/EventDetails.java</file>
             <file>file:/Users/aakirti/Documents/FBT/FutsalBookingSystem/src/futsalbookingsystem/controller/RegistrationController.java</file>
             <file>file:/Users/aakirti/Documents/FBT/FutsalBookingSystem/src/futsalbookingsystem/database/MySqlConnection.java</file>
             <file>file:/Users/aakirti/Documents/FBT/FutsalBookingSystem/src/futsalbookingsystem/database/DbConnection.java</file>
             <file>file:/Users/aakirti/Documents/FBT/FutsalBookingSystem/src/futsalbookingsystem/controller/email/SMTPMailSender.java</file>
-=======
-            <file>file:/C:/Users/ASUS/OneDrive/Desktop/FutsalBookingSystem/src/futsalbookingsystem/view/RegistrationView.java</file>
-            <file>file:/C:/Users/ASUS/OneDrive/Desktop/FutsalBookingSystem/src/futsalbookingsystem/view/AccDeletion.java</file>
-            <file>file:/C:/Users/ASUS/OneDrive/Desktop/FutsalBookingSystem/src/futsalbookingsystem/view/LoginView.java</file>
-            <file>file:/C:/Users/ASUS/OneDrive/Desktop/FutsalBookingSystem/src/futsalbookingsystem/database/MySqlConnection.java</file>
-            <file>file:/C:/Users/ASUS/OneDrive/Desktop/FutsalBookingSystem/src/futsalbookingsystem/model/LoginRequest.java</file>
-            <file>file:/C:/Users/ASUS/OneDrive/Desktop/FutsalBookingSystem/src/futsalbookingsystem/model/UserData.java</file>
-            <file>file:/C:/Users/ASUS/OneDrive/Desktop/FutsalBookingSystem/src/futsalbookingsystem/controller/RegistrationController.java</file>
-            <file>file:/C:/Users/ASUS/OneDrive/Desktop/FutsalBookingSystem/src/futsalbookingsystem/FutsalBookingSystem.java</file>
-            <file>file:/C:/Users/ASUS/OneDrive/Desktop/FutsalBookingSystem/src/futsalbookingsystem/view/SetBookingTimeView.java</file>
-            <file>file:/C:/Users/ASUS/OneDrive/Desktop/FutsalBookingSystem/src/futsalbookingsystem/view/EventView.java</file>
-            <file>file:/C:/Users/ASUS/OneDrive/Desktop/FutsalBookingSystem/src/futsalbookingsystem/controller/DashboardController.java</file>
-            <file>file:/C:/Users/ASUS/OneDrive/Desktop/FutsalBookingSystem/src/futsalbookingsystem/controller/LoginController.java</file>
-            <file>file:/C:/Users/ASUS/OneDrive/Desktop/FutsalBookingSystem/src/futsalbookingsystem/dao/UserDao.java</file>
-            <file>file:/C:/Users/ASUS/OneDrive/Desktop/FutsalBookingSystem/src/futsalbookingsystem/view/ChangeKnownPasswordView.java</file>
-            <file>file:/C:/Users/ASUS/OneDrive/Desktop/FutsalBookingSystem/src/futsalbookingsystem/view/DashboardView.java</file>
-            <file>file:/C:/Users/ASUS/OneDrive/Desktop/FutsalBookingSystem/src/futsalbookingsystem/imagepicker/download__1_-removebg-preview.png</file>
-            <file>file:/C:/Users/ASUS/OneDrive/Desktop/FutsalBookingSystem/src/futsalbookingsystem/view/BookingView.java</file>
-            <file>file:/C:/Users/ASUS/OneDrive/Desktop/FutsalBookingSystem/src/futsalbookingsystem/controller/ChangePasswordController.java</file>
-            <file>file:/C:/Users/ASUS/OneDrive/Desktop/FutsalBookingSystem/src/futsalbookingsystem/database/DbConnection.java</file>
-            <file>file:/C:/Users/ASUS/OneDrive/Desktop/FutsalBookingSystem/src/futsalbookingsystem/model/ChangePassword.java</file>
->>>>>>> samarth
+            <file>file:/Users/aakirti/Documents/FBT/FutsalBookingSystem/src/futsalbookingsystem/FutsalBookingSystem.java</file>
+            <file>file:/Users/aakirti/Documents/FBT/FutsalBookingSystem/src/futsalbookingsystem/model/ResetPasswordRequest.java</file>
+            <file>file:/Users/aakirti/Documents/FBT/FutsalBookingSystem/src/futsalbookingsystem/controller/BookingController.java</file>
+            <file>file:/Users/aakirti/Documents/FBT/FutsalBookingSystem/src/futsalbookingsystem/controller/UpdateAccountController.java</file>
+            <file>file:/Users/aakirti/Documents/FBT/FutsalBookingSystem/src/futsalbookingsystem/dao/TeamDao.java</file>
         </group>
     </open-files>
 </project-private>

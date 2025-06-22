@@ -33,6 +33,7 @@
             <file>file:/C:/Users/cis-c/OneDrive/Desktop/Futsal%20Booking%20System/FutsalBookingSystem/src/futsalbookingsystem/view/RegistrationView.java</file>
 >>>>>>> b6497d3c366d4a7db8e5e8c038a93a5b498406dc
 =======
+>>>>>>> origin/main
             <file>file:/Users/aakirti/Documents/FBT/FutsalBookingSystem/src/futsalbookingsystem/controller/LoginController.java</file>
             <file>file:/Users/aakirti/Documents/FBT/FutsalBookingSystem/src/futsalbookingsystem/model/LoginRequest.java</file>
             <file>file:/Users/aakirti/Documents/FBT/FutsalBookingSystem/src/futsalbookingsystem/view/LoginView.java</file>
@@ -56,11 +57,17 @@
             <file>file:/Users/aakirti/Documents/FBT/FutsalBookingSystem/src/futsalbookingsystem/view/UpdateAccountView.java</file>
             <file>file:/Users/aakirti/Documents/FBT/FutsalBookingSystem/src/futsalbookingsystem/view/ViewProfileView.java</file>
             <file>file:/Users/aakirti/Documents/FBT/FutsalBookingSystem/src/futsalbookingsystem/controller/DashboardController.java</file>
-            <file>file:/Users/aakirti/Documents/FBT/FutsalBookingSystem/src/futsalbookingsystem/view/EventDetails.java</file>
             <file>file:/Users/aakirti/Documents/FBT/FutsalBookingSystem/src/futsalbookingsystem/controller/RegistrationController.java</file>
             <file>file:/Users/aakirti/Documents/FBT/FutsalBookingSystem/src/futsalbookingsystem/database/MySqlConnection.java</file>
             <file>file:/Users/aakirti/Documents/FBT/FutsalBookingSystem/src/futsalbookingsystem/database/DbConnection.java</file>
             <file>file:/Users/aakirti/Documents/FBT/FutsalBookingSystem/src/futsalbookingsystem/controller/email/SMTPMailSender.java</file>
+<<<<<<< HEAD
+            <file>file:/Users/aakirti/Documents/FBT/FutsalBookingSystem/src/futsalbookingsystem/FutsalBookingSystem.java</file>
+            <file>file:/Users/aakirti/Documents/FBT/FutsalBookingSystem/src/futsalbookingsystem/model/ResetPasswordRequest.java</file>
+            <file>file:/Users/aakirti/Documents/FBT/FutsalBookingSystem/src/futsalbookingsystem/controller/BookingController.java</file>
+            <file>file:/Users/aakirti/Documents/FBT/FutsalBookingSystem/src/futsalbookingsystem/controller/UpdateAccountController.java</file>
+            <file>file:/Users/aakirti/Documents/FBT/FutsalBookingSystem/src/futsalbookingsystem/dao/TeamDao.java</file>
+=======
 =======
             <file>file:/C:/Users/ASUS/OneDrive/Desktop/FutsalBookingSystem/src/futsalbookingsystem/view/RegistrationView.java</file>
             <file>file:/C:/Users/ASUS/OneDrive/Desktop/FutsalBookingSystem/src/futsalbookingsystem/view/AccDeletion.java</file>
@@ -75,7 +82,11 @@
             <file>file:/C:/Users/ASUS/OneDrive/Desktop/FutsalBookingSystem/src/futsalbookingsystem/model/ChangePassword.java</file>
 >>>>>>> samarth
 >>>>>>> 805abf98614a3a91ffdbebac3a560716349b57a6
+<<<<<<< HEAD
 >>>>>>> 5eebc7ee944530db062fd3852aa1f43106982086
+=======
+>>>>>>> origin/main
+>>>>>>> 919b8100b4246076e61d95b668443d3ca1abd096
         </group>
     </open-files>
 </project-private>

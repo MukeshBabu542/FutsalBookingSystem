@@ -31,6 +31,8 @@ public class RegistrationController {
     }
     public void close(){
         this.registrationView.dispose();
+        
+
       
 
         

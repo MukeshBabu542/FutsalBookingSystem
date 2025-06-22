@@ -9,6 +9,15 @@ import java.awt.Color;
 import javax.swing.JOptionPane;
 
 import futsalbookingsystem.dao.UserDao;
+import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JFileChooser;
+import javax.swing.JPanel;
 
 /**
  *
@@ -23,11 +32,85 @@ public class UpdateAccountView extends javax.swing.JFrame {
     public UpdateAccountView(String userEmail) {
         this.userEmail = userEmail;
         initComponents();
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+
+        UserDao dao = new UserDao();
+        String imagePath = dao.getUserPhotoPath(userEmail);
+        if (imagePath != null) {
+            File imgFile = new File(imagePath);
+            if (imgFile.exists()) {
+                ImageIcon icon = new ImageIcon(imgFile.getAbsolutePath());
+                Image img = icon.getImage().getScaledInstance(jLabel8.getWidth(), jLabel8.getHeight(), Image.SCALE_SMOOTH);
+                jLabel8.setIcon(new ImageIcon(img));
+            }
+        }
+            jButton1.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
             handleUpdateAccount();
     }
     });
+    jButton2.addActionListener(new ActionListener() {
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        // Create a custom dialog with an Upload button
+        JButton uploadBtn = new JButton("Upload");
+        JPanel panel = new JPanel();
+        panel.add(uploadBtn);
+
+        JDialog dialog = new JDialog();
+        dialog.setTitle("Upload Photo");
+        dialog.setModal(true);
+        dialog.getContentPane().add(panel);
+        dialog.pack();
+        dialog.setLocationRelativeTo(null);
+
+       uploadBtn.addActionListener(new ActionListener() {
+    public void actionPerformed(ActionEvent evt) {
+        JFileChooser fileChooser = new JFileChooser();
+        int result = fileChooser.showOpenDialog(dialog);
+        if (result == JFileChooser.APPROVE_OPTION) {
+            File selectedFile = fileChooser.getSelectedFile();
+
+            // Create directory if not exists
+            File destDir = new File("user_photos");
+            if (!destDir.exists()) {
+                destDir.mkdirs();
+            }
+
+            // Create new file with unique name
+            String extension = selectedFile.getName().substring(selectedFile.getName().lastIndexOf("."));
+            File destination = new File(destDir, userEmail + extension); // e.g., user@example.com.jpg
+
+            try {
+                java.nio.file.Files.copy(
+                    selectedFile.toPath(),
+                    destination.toPath(),
+                    java.nio.file.StandardCopyOption.REPLACE_EXISTING
+                );
+
+                // Update jLabel with saved image
+                ImageIcon icon = new ImageIcon(destination.getAbsolutePath());
+                Image img = icon.getImage().getScaledInstance(jLabel8.getWidth(), jLabel8.getHeight(), Image.SCALE_SMOOTH);
+                jLabel8.setIcon(new ImageIcon(img));
+
+                // Save path to DB
+                UserDao dao = new UserDao();
+                dao.updateUserPhotoPath(userEmail, destination.getPath());
+
+                dialog.dispose();
+
+            } catch (Exception ex) {
+                ex.printStackTrace();
+                JOptionPane.showMessageDialog(null, "Failed to upload image.");
+            }
+        }
+    }
+});
+
+
+        dialog.setVisible(true);
+    }
+});
+
     }
 
     private void handleUpdateAccount() {

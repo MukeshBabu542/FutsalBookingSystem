@@ -30,11 +30,11 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="48" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Update Account"/>
+        <Property name="text" type="java.lang.String" value="View Profile"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="520" y="30" width="-1" height="-1"/>
+          <AbsoluteConstraints x="550" y="30" width="-1" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>

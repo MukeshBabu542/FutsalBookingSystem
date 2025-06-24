@@ -24,6 +24,7 @@ public class ViewProfileView extends javax.swing.JFrame {
     public ViewProfileView(String userEmail) {
         this.userEmail = userEmail;
         initComponents();
+        setLocation(0, 0);
         
         UserDao dao = new UserDao();
         String imagePath = dao.getUserPhotoPath(userEmail);
@@ -69,8 +70,8 @@ public class ViewProfileView extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jLabel1.setText("Update Account");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 30, -1, -1));
+        jLabel1.setText("View Profile");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 30, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel3.setText("Username");
@@ -229,6 +230,7 @@ public class ViewProfileView extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(ViewProfileView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

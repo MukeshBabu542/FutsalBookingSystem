@@ -30,6 +30,7 @@ public class EventView extends javax.swing.JFrame {
     public EventView(String userEmail) {
         this.userEmail = userEmail;
         initComponents();
+        setLocation(0, 0);
         loadExistingEventImage();
 
         EventDao eventDao = new EventDao();
@@ -113,10 +114,12 @@ public class EventView extends javax.swing.JFrame {
     private void loadExistingEventImage() {
         EventDao eventDao = new EventDao();
         String imagePath = eventDao.getEventImagePath();
+        
         if (imagePath != null && !imagePath.isEmpty()) {
             displayEventImage(imagePath);
         }
     }
+
 
     private void uploadEventImage() {
         JFileChooser fileChooser = new JFileChooser();
@@ -272,7 +275,7 @@ public class EventView extends javax.swing.JFrame {
 
         jButton4.setBackground(new java.awt.Color(217, 217, 217));
         jButton4.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        jButton4.setText("History");
+        jButton4.setText("About");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -312,14 +315,14 @@ public class EventView extends javax.swing.JFrame {
                                 .addGap(6, 6, 6)
                                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel3))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton1)
@@ -339,13 +342,12 @@ public class EventView extends javax.swing.JFrame {
         jButton6.setBackground(new java.awt.Color(217, 217, 217));
         jButton6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButton6.setText("Register your Team");
-        jButton6.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 480, 250, 40));
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 480, 200, 40));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel2.setText("Event Details");
@@ -420,7 +422,7 @@ public class EventView extends javax.swing.JFrame {
         jButton7.setBackground(new java.awt.Color(217, 217, 217));
         jButton7.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jButton7.setText("Upload");
-        jButton7.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jButton7.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton7ActionPerformed(evt);
@@ -435,14 +437,6 @@ public class EventView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        DashboardView dashboardView = new DashboardView(userEmail);
-        dashboardView.setVisible(true);
-        
-        dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
         BookingView bookingView = new BookingView(userEmail);
@@ -453,7 +447,7 @@ public class EventView extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-        AboutView historyView = new AboutView(userEmail);
+        About historyView = new About(userEmail);
         historyView.setVisible(true);
         
         dispose();
@@ -477,6 +471,15 @@ public class EventView extends javax.swing.JFrame {
         // TODO add your handling code here:
         uploadEventImage();
     }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        DashboardView dashboardView = new DashboardView(userEmail);
+        dashboardView.setVisible(true);
+        
+        dispose();
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

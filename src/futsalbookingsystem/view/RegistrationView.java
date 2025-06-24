@@ -8,6 +8,7 @@ public class RegistrationView extends javax.swing.JFrame {
 
     public RegistrationView() {
         initComponents();
+        setLocation(0, 0);
     }
    
 

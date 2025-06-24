@@ -4,6 +4,7 @@
  */
 package futsalbookingsystem.controller;
 
+import futsalbookingsystem.dao.UserDao;
 import futsalbookingsystem.model.UserData;
 import futsalbookingsystem.view.LoginView;
 import futsalbookingsystem.view.RegistrationView;
@@ -31,10 +32,6 @@ public class RegistrationController {
     public void close(){
         this.registrationView.dispose();
         
-
-      
-
-        
     }
     class RegistrationUser implements ActionListener{
 
@@ -60,16 +57,10 @@ public class RegistrationController {
                    LoginController loginController = new LoginController(loginView);
                    loginController.open();
                    
-
-                   
                }else{
                    JOptionPane.showMessageDialog(registrationView,"Failed to Register");
                }
            }
-           if (!email.matches("^[\\w.-]+@[\\w.-]+\\.\\w+$")) {
-    JOptionPane.showMessageDialog(registrationView, "Invalid email format.");
-    return;
-}
            
         }
         

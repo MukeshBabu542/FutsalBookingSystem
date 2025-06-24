@@ -24,6 +24,7 @@ public class AccDeletion extends javax.swing.JFrame {
     public AccDeletion(String userEmail) {
         this.userEmail = userEmail;
         initComponents();
+        setLocation(0, 0);
     }
 
     /**

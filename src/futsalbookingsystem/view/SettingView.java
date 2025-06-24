@@ -26,6 +26,7 @@ public class SettingView extends javax.swing.JFrame {
     public SettingView(String userEmail) {
         this.userEmail = userEmail;
         initComponents();
+        setLocation(0, 0);
 
         UserDao dao = new UserDao();
         String imagePath = dao.getUserPhotoPath(userEmail);
@@ -113,7 +114,7 @@ public class SettingView extends javax.swing.JFrame {
 
         HostoryBtn.setBackground(new java.awt.Color(217, 217, 217));
         HostoryBtn.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        HostoryBtn.setText("History");
+        HostoryBtn.setText("About");
         HostoryBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 HostoryBtnActionPerformed(evt);
@@ -276,7 +277,7 @@ public class SettingView extends javax.swing.JFrame {
 
     private void HostoryBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HostoryBtnActionPerformed
         // TODO add your handling code here:
-        AboutView historyView  = new AboutView(userEmail);
+        About historyView  = new About(userEmail);
         historyView.setVisible(true);
         
         dispose();
@@ -284,7 +285,7 @@ public class SettingView extends javax.swing.JFrame {
 
     private void ChangePasswordBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChangePasswordBtnActionPerformed
         // TODO add your handling code here:
-        ChangePasswordView changePasswordView = new ChangePasswordView(userEmail);
+        ChangeKnownPasswordView changePasswordView = new ChangeKnownPasswordView(userEmail);
         changePasswordView.setVisible(true);
         dispose();
     }//GEN-LAST:event_ChangePasswordBtnActionPerformed
@@ -364,6 +365,7 @@ public class SettingView extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(SettingView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

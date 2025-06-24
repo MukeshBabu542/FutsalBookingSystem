@@ -32,6 +32,7 @@ public class UpdateAccountView extends javax.swing.JFrame {
     public UpdateAccountView(String userEmail) {
         this.userEmail = userEmail;
         initComponents();
+        setLocation(0, 0);
 
         UserDao dao = new UserDao();
         String imagePath = dao.getUserPhotoPath(userEmail);
@@ -412,6 +413,7 @@ public class UpdateAccountView extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(UpdateAccountView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

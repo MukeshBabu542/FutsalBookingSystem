@@ -1,32 +1,58 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package futsalbookingsystem.view;
 
-import futsalbookingsystem.dao.EventDao;
-import futsalbookingsystem.dao.UserDao;
-import java.awt.Image;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
+import futsalbookingsystem.dao.EventDao;
+import futsalbookingsystem.dao.UserDao;
+import java.awt.Image;
+import java.awt.event.FocusAdapter;
+
 /**
  *
- * @author ASUS
+ * @author HP
  */
 public class EventUserView extends javax.swing.JFrame {
+    private String userEmail;
 
     /**
-     * Creates new form EventUserView
+     * Creates new form EventView
      */
-    public EventUserView() {
+    public EventUserView(String userEmail) {
+        this.userEmail = userEmail;
         initComponents();
-        
+        setLocation(0, 0);
+
+        jTextField1.setEditable(false);
+        jTextField2.setEditable(false);
+        jTextField3.setEditable(false);
+        jTextField4.setEditable(false);
+        jTextField5.setEditable(false);
+        jTextField6.setEditable(false);
+        jTextField7.setEditable(false);
+
+        loadExistingEventImage();
+
+        EventDao eventDao = new EventDao();
+        Map<String, String> eventData = eventDao.loadEvent();
+
+        jTextField1.setText(eventData.getOrDefault("name", ""));
+        jTextField2.setText(eventData.getOrDefault("datetime", ""));
+        jTextField3.setText(eventData.getOrDefault("registration_deadline", ""));
+        jTextField4.setText(eventData.getOrDefault("game_duration", ""));
+        jTextField5.setText(eventData.getOrDefault("dress_code", ""));
+        jTextField6.setText(eventData.getOrDefault("registration_fee", ""));
+        jTextField7.setText(eventData.getOrDefault("payment_options", ""));
+
         UserDao dao = new UserDao();
         String imagePath = dao.getUserPhotoPath(userEmail);
         if (imagePath != null) {
@@ -38,8 +64,8 @@ public class EventUserView extends javax.swing.JFrame {
             }
         }
     }
-    
-     private void updateEventImagePath(String imagePath) {
+
+    private void updateEventImagePath(String imagePath) {
         EventDao eventDao = new EventDao();
         eventDao.updateEventImagePath(imagePath);
     }
@@ -65,70 +91,12 @@ public class EventUserView extends javax.swing.JFrame {
     private void loadExistingEventImage() {
         EventDao eventDao = new EventDao();
         String imagePath = eventDao.getEventImagePath();
+        
         if (imagePath != null && !imagePath.isEmpty()) {
             displayEventImage(imagePath);
         }
     }
 
-    private void uploadEventImage() {
-        JFileChooser fileChooser = new JFileChooser();
-        
-        // Set file filter to only show images
-        fileChooser.setFileFilter(new javax.swing.filechooser.FileFilter() {
-            @Override
-            public boolean accept(File f) {
-                if (f.isDirectory()) return true;
-                String extension = getFileExtension(f.getName()).toLowerCase();
-                return extension.equals("jpg") || extension.equals("jpeg") || 
-                    extension.equals("png") || extension.equals("gif") || 
-                    extension.equals("bmp");
-            }
-            
-            @Override
-            public String getDescription() {
-                return "Image Files (*.jpg, *.jpeg, *.png, *.gif, *.bmp)";
-            }
-        });
-        
-        fileChooser.setDialogTitle("Select Event Image");
-        
-        int result = fileChooser.showOpenDialog(this);
-        if (result == JFileChooser.APPROVE_OPTION) {
-            File selectedFile = fileChooser.getSelectedFile();
-            
-            try {
-                // Create events directory if it doesn't exist
-                File eventsDir = new File("events/images");
-                if (!eventsDir.exists()) {
-                    eventsDir.mkdirs();
-                }
-                
-                // Copy file to events directory with unique name
-                String fileName = "event_image." + getFileExtension(selectedFile.getName());
-                File destinationFile = new File(eventsDir, fileName);
-                
-                // Copy the selected file to destination
-                copyFile(selectedFile, destinationFile);
-                
-                // Update database with new image path
-                updateEventImagePath(destinationFile.getAbsolutePath());
-                
-                // Display the uploaded image
-                displayEventImage(destinationFile.getAbsolutePath());
-                
-                JOptionPane.showMessageDialog(this, 
-                    "Event image uploaded successfully!", 
-                    "Success", 
-                    JOptionPane.INFORMATION_MESSAGE);
-                    
-            } catch (IOException e) {
-                JOptionPane.showMessageDialog(this, 
-                    "Error uploading image: " + e.getMessage(), 
-                    "Error", 
-                    JOptionPane.ERROR_MESSAGE);
-            }
-        }
-    }
 
     private String getFileExtension(String fileName) {
         int lastDot = fileName.lastIndexOf('.');
@@ -148,6 +116,8 @@ public class EventUserView extends javax.swing.JFrame {
                 fos.write(buffer, 0, length);
             }
         }
+    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -185,7 +155,6 @@ public class EventUserView extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        jButton7 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -222,7 +191,7 @@ public class EventUserView extends javax.swing.JFrame {
 
         jButton4.setBackground(new java.awt.Color(217, 217, 217));
         jButton4.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        jButton4.setText("History");
+        jButton4.setText("About");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -366,17 +335,6 @@ public class EventUserView extends javax.swing.JFrame {
         jLabel14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 120, 300, 340));
 
-        jButton7.setBackground(new java.awt.Color(217, 217, 217));
-        jButton7.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jButton7.setText("Upload");
-        jButton7.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 480, 170, 50));
-
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/futsalbookingsystem/imagepicker/Background.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -388,7 +346,7 @@ public class EventUserView extends javax.swing.JFrame {
         // TODO add your handling code here:
         DashboardView dashboardView = new DashboardView(userEmail);
         dashboardView.setVisible(true);
-
+        
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -396,15 +354,15 @@ public class EventUserView extends javax.swing.JFrame {
         // TODO add your handling code here:
         BookingView bookingView = new BookingView(userEmail);
         bookingView.setVisible(true);
-
+        
         dispose();
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-        AboutView historyView = new AboutView(userEmail);
+        About historyView = new About(userEmail);
         historyView.setVisible(true);
-
+        
         dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -412,7 +370,7 @@ public class EventUserView extends javax.swing.JFrame {
         // TODO add your handling code here:
         SettingView settingView = new SettingView(userEmail);
         settingView.setVisible(true);
-
+        
         dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -421,11 +379,6 @@ public class EventUserView extends javax.swing.JFrame {
         TeamRegistrationDialog dialog = new TeamRegistrationDialog(this, userEmail);
         dialog.setVisible(true);
     }//GEN-LAST:event_jButton6ActionPerformed
-
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
-        uploadEventImage();
-    }//GEN-LAST:event_jButton7ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -444,20 +397,20 @@ public class EventUserView extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(EventUserView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EventView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(EventUserView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EventView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(EventUserView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EventView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(EventUserView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EventView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new EventUserView().setVisible(true);
+                new EventUserView("user@example.com").setVisible(true);
             }
         });
     }
@@ -469,7 +422,6 @@ public class EventUserView extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

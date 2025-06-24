@@ -20,16 +20,18 @@ public class BookingController {
         setupLabelListeners();
         setInitialLabelColors();
     }
+    
+    
 
     private void setupLabelListeners() {
 
-        view.getJLabel23().addMouseListener(new MouseAdapter() {
+    view.getJLabel23().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent evt) {
                 handleBookingLabelClick(view.getJLabel23());
             }
         });
-        view.getJLabel24().addMouseListener(new MouseAdapter() {
+    view.getJLabel24().addMouseListener(new MouseAdapter() {
         @Override
         public void mouseClicked(MouseEvent evt) {
             handleBookingLabelClick(view.getJLabel24());

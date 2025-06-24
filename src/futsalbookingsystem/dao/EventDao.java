@@ -72,20 +72,30 @@ public class EventDao {
 
 
     public boolean updateEventImagePath(String imagePath) {
-    String query = "UPDATE events SET image_path = ? WHERE id = (SELECT id FROM events LIMIT 1)";
-    
-    try (Connection conn = mysql.openConnection();
-         PreparedStatement stmt = conn.prepareStatement(query)) {
-        
-        stmt.setString(1, imagePath);
-        int rowsAffected = stmt.executeUpdate();
-        return rowsAffected > 0;
-        
-    } catch (SQLException e) {
-        e.printStackTrace();
+        String selectQuery = "SELECT id FROM events LIMIT 1";
+        String updateQuery = "UPDATE events SET image_path = ? WHERE id = ?";
+
+        try (Connection conn = mysql.openConnection();
+            PreparedStatement selectStmt = conn.prepareStatement(selectQuery);
+            ResultSet rs = selectStmt.executeQuery()) {
+
+            if (rs.next()) {
+                int id = rs.getInt("id");
+
+                try (PreparedStatement updateStmt = conn.prepareStatement(updateQuery)) {
+                    updateStmt.setString(1, imagePath);
+                    updateStmt.setInt(2, id);
+                    return updateStmt.executeUpdate() > 0;
+                }
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
         return false;
     }
-}
+
 
     public String getEventImagePath() {
         String query = "SELECT image_path FROM events LIMIT 1";

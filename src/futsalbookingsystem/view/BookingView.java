@@ -16,10 +16,6 @@ import java.awt.Image;
  *
  * @author HP
  */
-import javax.swing.*;
-import java.awt.*;
-
-
 public class BookingView extends javax.swing.JFrame {
     private String userEmail;
 
@@ -29,6 +25,7 @@ public class BookingView extends javax.swing.JFrame {
     public BookingView(String userEmail) {
         this.userEmail = userEmail;
         initComponents(); 
+        setLocation(0, 0);
 
         UserDao dao = new UserDao();
         String imagePath = dao.getUserPhotoPath(userEmail);
@@ -40,6 +37,9 @@ public class BookingView extends javax.swing.JFrame {
                 jLabel51.setIcon(new ImageIcon(img));
             }
         }
+
+        // Initialize the controller
+        new futsalbookingsystem.controller.BookingController(this, userEmail);
 
         jLabel23.setOpaque(true);
         jLabel23.setBackground(java.awt.Color.RED);
@@ -295,8 +295,7 @@ public class BookingView extends javax.swing.JFrame {
 
         
 
-        // Initialize the controller
-        new futsalbookingsystem.controller.BookingController(this, userEmail);
+  
 
         
     }
@@ -781,11 +780,6 @@ public class BookingView extends javax.swing.JFrame {
         jLabel49 = new javax.swing.JLabel();
         jLabel50 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-
-        jLabel4.setText("jLabel4");
-
-        jLabel5.setText("jLabel5");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -826,7 +820,7 @@ public class BookingView extends javax.swing.JFrame {
 
         jButton4.setBackground(new java.awt.Color(217, 217, 217));
         jButton4.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        jButton4.setText("History");
+        jButton4.setText("About");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -1478,7 +1472,7 @@ public class BookingView extends javax.swing.JFrame {
         getContentPane().add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 110, -1, -1));
 
         jLabel44.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel44.setText("8 a.m. - 4 p.m. ");
+        jLabel44.setText("10 p.m. - 4 p.m. ");
         getContentPane().add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 90, -1, -1));
 
         jLabel45.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -1507,11 +1501,7 @@ public class BookingView extends javax.swing.JFrame {
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/futsalbookingsystem/imagepicker/Background.png"))); // NOI18N
-        jLabel1.setText("asda");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 970, -1));
-
-        jLabel2.setText("jLabel2");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 90, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -1540,7 +1530,7 @@ public class BookingView extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-        AboutView historyView = new AboutView(userEmail);
+        About historyView = new About(userEmail);
         historyView.setVisible(true);
         
         dispose();
@@ -1611,6 +1601,7 @@ public class BookingView extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(BookingView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

@@ -59,9 +59,9 @@ public class RegistrationView extends javax.swing.JFrame {
 
         signinButton.setBackground(new java.awt.Color(217, 217, 217));
         signinButton.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        signinButton.setText("Sign in");
+        signinButton.setText("Register");
         signinButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        getContentPane().add(signinButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 480, 200, 40));
+        getContentPane().add(signinButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 480, 200, 40));
 
         nameTextField.setBackground(new java.awt.Color(217, 217, 217));
         nameTextField.setText("   Enter your full name");
@@ -156,13 +156,16 @@ public class RegistrationView extends javax.swing.JFrame {
         jLabel8.setText("Enter your email");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 256, -1, 20));
 
-        jButton3.setText("jButton3");
+        jButton3.setBackground(new java.awt.Color(217, 217, 217));
+        jButton3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jButton3.setText("Login");
+        jButton3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 490, -1, -1));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 480, 80, 40));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/futsalbookingsystem/imagepicker/Background.png"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));

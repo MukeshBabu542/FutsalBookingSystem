@@ -4,20 +4,104 @@
  */
 package futsalbookingsystem.view;
 
+import java.io.File;
+import java.util.List;
+
+import javax.swing.ImageIcon;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.table.TableModel;
+
+import futsalbookingsystem.dao.TeamDao;
+import futsalbookingsystem.dao.UserDao;
+import futsalbookingsystem.model.TeamData;
+
+import java.awt.Image;
+
 /**
  *
  * @author HP
  */
-public class HistoryView extends javax.swing.JFrame {
+public class AboutView extends javax.swing.JFrame {
     private String userEmail;
 
     /**
      * Creates new form HistoryView
      */
-    public HistoryView(String userEmail) {
+    public AboutView(String userEmail) {
         this.userEmail = userEmail;
         initComponents();
+        showTeamsInTable(); 
+
+        UserDao dao = new UserDao();
+        String imagePath = dao.getUserPhotoPath(userEmail);
+        if (imagePath != null) {
+            File imgFile = new File(imagePath);
+            if (imgFile.exists()) {
+                ImageIcon icon = new ImageIcon(imgFile.getAbsolutePath());
+                Image img = icon.getImage().getScaledInstance(jLabel8.getWidth(), jLabel8.getHeight(), Image.SCALE_SMOOTH);
+                jLabel8.setIcon(new ImageIcon(img));
+            }
+        }
     }
+
+    private List<TeamData> fetchTeamsForCurrentUser() {
+        TeamDao teamDao = new TeamDao();
+        return teamDao.getTeamsByUser(userEmail);
+    }
+
+    private TableModel createTeamTableModel(List<TeamData> teams) {
+    String[] columnNames = {
+        "ID", "Team Name", "Member Count", "Logo Path", "Payment Status", "User Email"
+    };
+
+    Object[][] data = new Object[teams.size()][6];
+    for (int i = 0; i < teams.size(); i++) {
+        TeamData team = teams.get(i);
+        data[i][0] = team.getId();             // team_id
+        data[i][1] = team.getTeamName();       // team_name
+        data[i][2] = team.getMemberCount();    // member_count
+        data[i][3] = team.getLogoPath();       // logo_path
+        data[i][4] = team.getPaymentStatus();  // payment_status
+        data[i][5] = team.getUserEmail();      // user_email
+    }
+
+    return new javax.swing.table.DefaultTableModel(data, columnNames);
+}
+
+
+    private void showTeamsInTable() {
+        List<TeamData> teams = fetchTeamsForCurrentUser();
+        System.out.println("Teams found: " + teams.size()); // ✅ Debug: see if data exists
+
+        // Create table model and JTable
+        TableModel model = createTeamTableModel(teams);
+        JTable table = new JTable(model);
+        table.setFillsViewportHeight(true); // ✅ Optional but helps rendering
+
+        // Wrap in scroll pane
+        JScrollPane scrollPane = new JScrollPane(table);
+
+        // Get label position & size
+        java.awt.Container parent = jLabel2.getParent();
+        int x = jLabel2.getX();
+        int y = jLabel2.getY();
+        int width = jLabel2.getWidth();
+        int height = jLabel2.getHeight();
+
+        parent.remove(jLabel2); // remove label placeholder
+
+        // ✅ Recommended: temporarily hardcode size to ensure visibility
+        scrollPane.setBounds(x, y, width, height);
+        parent.add(scrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(x, y, width, height));
+
+        // Refresh layout
+        parent.revalidate();
+        parent.repaint();
+    }
+
+
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -35,6 +119,11 @@ public class HistoryView extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -76,7 +165,12 @@ public class HistoryView extends javax.swing.JFrame {
 
         jButton4.setBackground(new java.awt.Color(217, 217, 217));
         jButton4.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        jButton4.setText("History-");
+        jButton4.setText("About-");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton3.setBackground(new java.awt.Color(217, 217, 217));
         jButton3.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
@@ -87,6 +181,9 @@ public class HistoryView extends javax.swing.JFrame {
             }
         });
 
+        jLabel8.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
@@ -94,24 +191,30 @@ public class HistoryView extends javax.swing.JFrame {
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel3))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGap(24, 24, 24)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                            .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                            .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel3))))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 253, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jButton1)
                 .addGap(18, 18, 18)
                 .addComponent(jButton2)
@@ -125,6 +228,19 @@ public class HistoryView extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 570));
+
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 55)); // NOI18N
+        jLabel12.setText("About");
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 20, -1, -1));
+
+        jLabel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 120, 270, 190));
+
+        jLabel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 130, 260, 170));
+
+        jLabel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 350, 280, 150));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/futsalbookingsystem/imagepicker/Background.png"))); // NOI18N
@@ -164,6 +280,10 @@ public class HistoryView extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jButton5ActionPerformed
 
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -181,20 +301,21 @@ public class HistoryView extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(HistoryView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AboutView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(HistoryView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AboutView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(HistoryView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AboutView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(HistoryView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AboutView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new HistoryView("user@example.com").setVisible(true);
+                new AboutView("user@example.com").setVisible(true);
             }
         });
     }
@@ -206,7 +327,12 @@ public class HistoryView extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel7;
     // End of variables declaration//GEN-END:variables
 }

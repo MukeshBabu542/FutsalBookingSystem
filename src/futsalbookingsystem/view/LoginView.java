@@ -193,7 +193,7 @@ public class LoginView extends javax.swing.JFrame {
 
         private void jTextField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusGained
         // TODO add your handling code here:
-        if (jTextField1.getText().equals("Enter your email"))
+        if (jTextField1.getText().equals("Enter your email address"))
         {
             jTextField1.setText("   ");
             jTextField1.setForeground(new Color(0,0,0));
@@ -204,7 +204,7 @@ public class LoginView extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (jTextField1.getText().trim().isEmpty())
         {            
-            jTextField1.setText("Enter your email");
+            jTextField1.setText("Enter your email address");
             jTextField1.setForeground(Color.BLACK);
         }
     }//GEN-LAST:event_jTextField1FocusLost

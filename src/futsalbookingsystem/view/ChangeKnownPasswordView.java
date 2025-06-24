@@ -20,6 +20,7 @@ public class ChangeKnownPasswordView extends javax.swing.JFrame {
     public ChangeKnownPasswordView(String userEmail) {
         this.userEmail = userEmail;
         initComponents();
+        setLocation(0,0);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
             handleChangePassword();
@@ -68,6 +69,7 @@ public class ChangeKnownPasswordView extends javax.swing.JFrame {
         jPasswordField3 = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -135,7 +137,7 @@ public class ChangeKnownPasswordView extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(217, 217, 217));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jButton1.setText("Button");
+        jButton1.setText("Change");
         jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 470, 170, 40));
@@ -150,6 +152,9 @@ public class ChangeKnownPasswordView extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 520, 90, 40));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/futsalbookingsystem/imagepicker/download__1_-removebg-preview.png"))); // NOI18N
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/futsalbookingsystem/imagepicker/Background.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 970, -1));
@@ -236,6 +241,7 @@ public class ChangeKnownPasswordView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JPasswordField jPasswordField2;
     private javax.swing.JPasswordField jPasswordField3;

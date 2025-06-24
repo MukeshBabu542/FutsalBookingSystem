@@ -7,14 +7,23 @@ public class UserData {
     private String name;
     private String id;
     private String phonenumber;
+    private String photoPath;
+    
+    
 
     public UserData(String name, String email, String phonenumber, String password) {
+        this.id = id;
         this.name = name;
         this.email = email;
         this.phonenumber = phonenumber;
         this.password = password;
+        this.photoPath = photoPath;
     }
 
+    public String getPhotoPath() {
+        return photoPath;
+    }
+    
     public UserData(String id, String name, String email, String phonenumber, String password) {
         this.id = id;
         this.name = name;

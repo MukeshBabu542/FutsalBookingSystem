@@ -4,7 +4,13 @@
  */
 package futsalbookingsystem.view;
 
+import futsalbookingsystem.dao.UserDao;
 import futsalbookingsystem.view.AccDeletion;
+import java.awt.Image;
+
+import java.io.File;
+
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -20,6 +26,19 @@ public class SettingView extends javax.swing.JFrame {
     public SettingView(String userEmail) {
         this.userEmail = userEmail;
         initComponents();
+        setLocation(0, 0);
+
+        UserDao dao = new UserDao();
+        String imagePath = dao.getUserPhotoPath(userEmail);
+        if (imagePath != null) {
+            File imgFile = new File(imagePath);
+            if (imgFile.exists()) {
+                ImageIcon icon = new ImageIcon(imgFile.getAbsolutePath());
+                Image img = icon.getImage().getScaledInstance(jLabel8.getWidth(), jLabel8.getHeight(), Image.SCALE_SMOOTH);
+                jLabel8.setIcon(new ImageIcon(img));
+            }
+        }
+      
 
         DeleteAccountBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt){
@@ -46,6 +65,7 @@ public class SettingView extends javax.swing.JFrame {
         BookingBtn = new javax.swing.JButton();
         HostoryBtn = new javax.swing.JButton();
         SettingBtn = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
         UpdateInfoBtn = new javax.swing.JButton();
         ViewprofileBtn = new javax.swing.JButton();
         ChangePasswordBtn = new javax.swing.JButton();
@@ -94,7 +114,7 @@ public class SettingView extends javax.swing.JFrame {
 
         HostoryBtn.setBackground(new java.awt.Color(217, 217, 217));
         HostoryBtn.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        HostoryBtn.setText("History");
+        HostoryBtn.setText("About");
         HostoryBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 HostoryBtnActionPerformed(evt);
@@ -105,6 +125,9 @@ public class SettingView extends javax.swing.JFrame {
         SettingBtn.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         SettingBtn.setText("Setting-");
 
+        jLabel8.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
@@ -112,24 +135,30 @@ public class SettingView extends javax.swing.JFrame {
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel3))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGap(24, 24, 24)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(EventBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(DashboardBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(BookingBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(HostoryBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(SettingBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(SettingBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel3))))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 249, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                 .addComponent(DashboardBtn)
                 .addGap(18, 18, 18)
                 .addComponent(EventBtn)
@@ -248,7 +277,7 @@ public class SettingView extends javax.swing.JFrame {
 
     private void HostoryBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HostoryBtnActionPerformed
         // TODO add your handling code here:
-        HistoryView historyView  = new HistoryView(userEmail);
+        About historyView  = new About(userEmail);
         historyView.setVisible(true);
         
         dispose();
@@ -361,6 +390,7 @@ public class SettingView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel7;
     // End of variables declaration//GEN-END:variables
 }

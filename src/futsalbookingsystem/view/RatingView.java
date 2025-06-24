@@ -5,13 +5,19 @@
 package futsalbookingsystem.view;
 
 import java.awt.Color;
-
+import javax.swing.ImageIcon;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 /**
  *
  * @author HP
  */
 public class RatingView extends javax.swing.JFrame {
     private String userEmail;
+    private int rating = 0;
+    private final ImageIcon emptyStar = new ImageIcon(getClass().getResource("/futsalbookingsystem/imagepicker/star_empty.png"));
+    private final ImageIcon filledStar = new ImageIcon(getClass().getResource("/futsalbookingsystem/imagepicker/star_filled.png"));
+
 
     /**
      * Creates new form RatingView
@@ -19,7 +25,34 @@ public class RatingView extends javax.swing.JFrame {
     public RatingView(String userEmail) {
         this.userEmail = userEmail;
         initComponents();
+        setLocation(0, 0);
+        
+        javax.swing.JLabel[] stars = {star1, star2, star3, star4, star5};
+            for (int i = 0; i < stars.length; i++) {
+                final int selectedRating = i + 1;
+                stars[i].addMouseListener(new MouseAdapter() {
+                    @Override
+                    public void mouseClicked(MouseEvent e) {
+                        updateStars(selectedRating);
+                    }
+                });
+
+        
+            }
     }
+    
+    private void updateStars(int selectedRating) {
+    rating = selectedRating;
+    javax.swing.JLabel[] stars = {star1, star2, star3, star4, star5};
+
+    for (int i = 0; i < stars.length; i++) {
+        if (i < rating) {
+            stars[i].setIcon(filledStar);
+        } else {
+            stars[i].setIcon(emptyStar);
+        }
+    }
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -33,6 +66,11 @@ public class RatingView extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
+        star1 = new javax.swing.JLabel();
+        star2 = new javax.swing.JLabel();
+        star3 = new javax.swing.JLabel();
+        star4 = new javax.swing.JLabel();
+        star5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -40,11 +78,11 @@ public class RatingView extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         jLabel2.setText("Player Rating");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 100, 340, 70));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, 340, 70));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/futsalbookingsystem/imagepicker/download__1_-removebg-preview.png"))); // NOI18N
         jLabel4.setText("jLabel4");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 460, 550));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-100, -20, 460, 550));
 
         jButton4.setBackground(new java.awt.Color(204, 204, 204));
         jButton4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -56,6 +94,22 @@ public class RatingView extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 520, 90, 40));
+
+        star1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/futsalbookingsystem/imagepicker/star_empty.png"))); // NOI18N
+        star1.setText("jLabel3");
+        getContentPane().add(star1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 40, 220, 220));
+
+        star2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/futsalbookingsystem/imagepicker/star_empty.png"))); // NOI18N
+        getContentPane().add(star2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 40, -1, -1));
+
+        star3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/futsalbookingsystem/imagepicker/star_empty.png"))); // NOI18N
+        getContentPane().add(star3, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 40, 230, -1));
+
+        star4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/futsalbookingsystem/imagepicker/star_empty.png"))); // NOI18N
+        getContentPane().add(star4, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 280, -1, -1));
+
+        star5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/futsalbookingsystem/imagepicker/star_empty.png"))); // NOI18N
+        getContentPane().add(star5, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 280, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/futsalbookingsystem/imagepicker/Background.png"))); // NOI18N
         jLabel1.setText("jLabel1");
@@ -111,5 +165,10 @@ public class RatingView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel star1;
+    private javax.swing.JLabel star2;
+    private javax.swing.JLabel star3;
+    private javax.swing.JLabel star4;
+    private javax.swing.JLabel star5;
     // End of variables declaration//GEN-END:variables
 }
